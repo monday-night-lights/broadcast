@@ -1,0 +1,14 @@
+C:\git\public\broadcast\broadcast\bin\Debug\broadcast.exe.config
+C:\git\public\broadcast\broadcast\bin\Debug\broadcast.exe
+C:\git\public\broadcast\broadcast\bin\Debug\broadcast.pdb
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.csprojAssemblyReference.cache
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.Form1.resources
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.Properties.Resources.resources
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.csproj.GenerateResource.cache
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.csproj.CoreCompileInputs.cache
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.exe
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.pdb
+C:\git\public\broadcast\broadcast\bin\Debug\broadcast.exe.manifest
+C:\git\public\broadcast\broadcast\bin\Debug\broadcast.application
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.exe.manifest
+C:\git\public\broadcast\broadcast\obj\Debug\broadcast.application

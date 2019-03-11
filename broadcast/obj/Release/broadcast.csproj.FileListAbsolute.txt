@@ -1,0 +1,14 @@
+C:\git\public\broadcast\broadcast\bin\Release\broadcast.exe.config
+C:\git\public\broadcast\broadcast\bin\Release\broadcast.exe.manifest
+C:\git\public\broadcast\broadcast\bin\Release\broadcast.application
+C:\git\public\broadcast\broadcast\bin\Release\broadcast.exe
+C:\git\public\broadcast\broadcast\bin\Release\broadcast.pdb
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.csprojAssemblyReference.cache
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.Form1.resources
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.Properties.Resources.resources
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.csproj.GenerateResource.cache
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.csproj.CoreCompileInputs.cache
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.exe.manifest
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.application
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.exe
+C:\git\public\broadcast\broadcast\obj\Release\broadcast.pdb
