@@ -50,6 +50,3 @@ obj
 bin
 
 publish
-!publish/*
-
-broadcast/obj/Release/broadcast.application
