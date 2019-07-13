@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace broadcast
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         private FileService fileService;
 
-        public Form1()
+        public Game()
         {
             InitializeComponent();
             fileService = new FileService();
