@@ -10,51 +10,159 @@ using System.Windows.Forms;
 
 namespace broadcast
 {
-	public partial class Draft : Form
-	{
-		IList<Pick> Picks;
+    public partial class Draft : Form
+    {
+        IList<Pick> Picks;
 
-		public Draft()
-		{
-			InitializeComponent();
-			Picks = new List<Pick>();
+        private int pickNumber;
 
-			listPicks.View = View.Details;
-			listPicks.GridLines = false;
-			listPicks.Sorting = SortOrder.Descending;
-			listPicks.Scrollable = true;
+        private FileService files;
 
-			listPicks.FullRowSelect = true;
-			listPicks.Columns.Add("Pick");
-			listPicks.Columns.Add("Team");
-			listPicks.Columns.Add("Player");
-		}
+        public Draft()
+        {
+            InitializeComponent();
+            files = new FileService();
+            
+            files.Write("ticker.txt", "Draft Selection:  ");
 
-		private void form_Enter(object sender, KeyPressEventArgs e)
-		{
-			if (e.KeyChar == 13 && !string.IsNullOrEmpty(txtTeam.Text) && !string.IsNullOrEmpty(txtPlayer.Text))
-			{
-				var newPick = new Pick
-				{
-					PickNumber = Picks.Any() ? Picks.Select(x => x.PickNumber).Max() + 1 : 1,
-					Team = txtTeam.Text,
-					Player = txtPlayer.Text
-				};
+            pickNumber = 1;
 
-				Picks.Add(newPick);
+            Picks = new List<Pick>();
 
-				listPicks.Items.Add(newPick.PickNumber.ToString()).SubItems.AddRange(new string[]
-				{
-					newPick.Team,
-					newPick.Player
-				});
+            columnHeader1.Width = draftOrder.Size.Width - 20;
 
-				listPicks.Sort();
+            var players = new List<string>()
+            {
+                "Allen, Ryan",
+                "Antioch, Paul",
+                "Bauer, Kyle",
+                "Biliti, Paul",
+                "Booker, Marvin",
+                "Braunscheidel, Tim",
+                "Brennan, Joe",
+                "Bustamante, Brian",
+                "Cipparone, David",
+                "Clauser, Cameron",
+                "Coan, Jeremy",
+                "Crnkovich, Matt",
+                "Cunningham, Darren",
+                "D'Onofrio, Tim",
+                "Drager, Jeremy",
+                "Dragovic, Andy",
+                "Edge, Brian",
+                "Eidt, John",
+                "Eisenmenger, Shaun",
+                "Ellis, Jim",
+                "Ellis, Joe",
+                "Femminineo, Andy",
+                "Floreno, John",
+                "Gibb, Bob",
+                "Gram, Charlie",
+                "Hardy, Shawn",
+                "Hetes, Andrew",
+                "Judge, Dave",
+                "Kimmel, Tim",
+                "LePoudre, Eric",
+                "LePoudre, Matt",
+                "LeRoy, Brian",
+                "Lesner, Dylan",
+                "Macehern, Chase",
+                "Machi, Charles",
+                "Machi, Sam",
+                "Madaleno, Bryan",
+                "Maffesoli, Ryan",
+                "McShannock, Jason",
+                "Millson, Doug",
+                "Monette, Ryan",
+                "Myers, Nick",
+                "Neville, Colin",
+                "Niphoratos, Pete",
+                "Olivere, Kevin",
+                "Orlandi, Giorgio",
+                "Otto, Todd",
+                "Otto, Troy",
+                "Otto, Tye",
+                "Pearcy, Brian",
+                "Pelot, Mark",
+                "Pfister, Chris",
+                "Podolan, Dave",
+                "Powers, AJ",
+                "Proctor, Paul",
+                "Ratliff, Dan",
+                "Riley, Aaron",
+                "Serda, Jack",
+                "Shepard, Michael",
+                "Sikorski, Mike",
+                "Simonelli, Alan",
+                "Skillman, Jeff",
+                "Slocum, Ben",
+                "Starr, Jon",
+                "Suits, Bill",
+                "Suokas, Adam",
+                "Taylor, Chris",
+                "Taylor, Matt",
+                "Turnbull, Dave",
+                "Vinande, David",
+                "Weaver, Jim",
+                "Wood, Keith",
+                "Wright, Justin",
+                "Wrubel, James",
+                "Young, Trent",
+                "Zamierowski, Allan",
+                "Zemmin, Ryan"
+            };
+            players.ForEach(x => playersListBox.Items.Add(x));
 
-				lblPickNumber.Text = "#" + (newPick.PickNumber + 1).ToString();
-				txtTeam.Text = string.Empty;
-				txtPlayer.Text = string.Empty;
-			}
-		}
-	}
+            UpdateOnTheClockLabel();
+        }
+
+        private void UpdateOnTheClockLabel()
+        {
+            ontheclockLabel.Text = $"The {teamsListBox.SelectedItem?.ToString() ?? "Team"} are On the Clock: #{pickNumber}";
+        }
+
+        private void draftButton_Click(object sender, EventArgs e)
+        {
+            if (teamsListBox.SelectedItem == null || playersListBox.SelectedItem == null)
+            {
+                return;
+            }
+
+            var pick = $"#{pickNumber} - {playersListBox.SelectedItem} - {teamsListBox.SelectedItem}";
+
+            draftOrder.Items.Add(pick);
+
+            playersListBox.Items.Remove(playersListBox.SelectedItem);
+
+            files.PushContent("fifth-pick.txt", "sixth-pick.txt");
+            files.PushContent("fourth-pick.txt", "fifth-pick.txt");
+            files.PushContent("third-pick.txt", "fourth-pick.txt");
+            files.PushContent("second-pick.txt", "third-pick.txt");
+            files.PushContent("first-pick.txt", "second-pick.txt");
+
+            files.Write("first-pick.txt", pick);
+
+            files.Concat("ticker.txt", "     |     " + pick );
+
+            pickNumber++;
+            UpdateOnTheClockLabel();
+        }
+
+        private void teamsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateOnTheClockLabel();
+        }
+
+        private void pickNumberUp_Click(object sender, EventArgs e)
+        {
+            pickNumber++;
+            UpdateOnTheClockLabel();
+        }
+
+        private void pickNumberDown_Click(object sender, EventArgs e)
+        {
+            pickNumber--;
+            UpdateOnTheClockLabel();
+        }
+    }
 }
