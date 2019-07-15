@@ -1,12 +1,40 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
+<div style="text-align:center">
   <h1>
-    MNL Draft
+    Welcome to the {{ title }}!
   </h1>
- </div>
-<h2>Here are some links to help you start: </h2>
+  <img width="300" alt="MNL Logo" src="../assets/img/mnl-logo.png">
+</div>
+<div class="form-group">
+  <select class="form-control team-select" multiple (change)="setTeam($event.target.value)">
+    <option *ngFor="let team of Teams" value={{team.class}} [ngClass]="team.class">
+      {{team.name}}
+    </option>
+  </select>
 
+  <h3 [ngClass]="SelectedTeam.class">On the Clock: {{SelectedTeam.name}} - #{{PickNumber}}</h3>
+  <a (click)="changePickNumber(-1)" class="btn btn-danger">Down</a><a (click)="changePickNumber(1)" class="btn btn-success">Up</a>
 
-<router-outlet></router-outlet>
+  <h2>Select the Drafted Player </h2>
+  <div class="ng-autocomplete">
+    <ng-autocomplete [data]="filteredPlayers" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+      (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+      [notFoundTemplate]="notFoundTemplate" #auto>
+    </ng-autocomplete>
 
-<selector></selector>
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.name">{{item.firstName}} {{item.lastName}} - {{item.position}}</a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+      <div [innerHTML]="notFound"></div>
+    </ng-template>
+  </div>
+</div>
+
+<div class="selection-board">
+  <div *ngFor="let selection of Selections" class="selection" [ngClass]="selection.className">
+    <h4>#{{selection.PickNumber}} {{selection.Pick.name}} - {{selection.Pick.position}}</h4>
+    <h5>{{selection.Team}}</h5>
+  </div>
+</div>

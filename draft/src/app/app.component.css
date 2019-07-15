@@ -1,0 +1,58 @@
+.team-select {
+    height: 175px !important;
+    width: 150px;
+}
+
+.selection-board {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.selection {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    display: none;
+    border-radius: 5px;
+}
+
+.selection h4, .selection h5 {
+    margin: 0;
+}
+
+.selection:nth-last-child(6), .selection:nth-last-child(5), .selection:nth-last-child(4), .selection:nth-last-child(3), .selection:nth-last-child(2), .selection:nth-last-child(1) {
+    display: initial;
+}
+
+.americans {
+    background-color: red;
+    color: white;
+}
+
+.tigers {
+    background-color: goldenrod;
+}
+
+.ducks {
+    background-color: purple;
+    color: white;
+}
+
+.stars {
+    background-color: rgb(69, 228, 69);
+}
+
+.seals {
+    background-color: seagreen;
+    color: white;
+}
+
+.whalers {
+    background-color: navy;
+    color: white;
+}
+
+.diques {
+    background-color: deepskyblue;
+}

@@ -1,27 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { SelectorComponent } from './selector/selector.component';
-import { DisplayComponent } from './display/display.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatAutocompleteModule } from '@angular/material';
+import { AppComponent } from './app.component';
+import { Player } from './Player';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SelectorComponent,
-    DisplayComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatAutocompleteModule
+    AutocompleteLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
