@@ -9,7 +9,7 @@ namespace broadcast
 {
     public class FileService
     {
-        private const string Path = "C:\\Temp";//"C:\\Users\\jdrager\\Documents\\GitHub\\broadcast\\data";
+        private const string Path = "C:\\Users\\jdrager\\Documents\\GitHub\\broadcast\\data";
 
         public string ReadString(string file)
         {

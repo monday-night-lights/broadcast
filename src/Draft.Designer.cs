@@ -36,6 +36,8 @@
             this.ontheclockLabel = new System.Windows.Forms.Label();
             this.pickNumberUp = new System.Windows.Forms.Button();
             this.pickNumberDown = new System.Windows.Forms.Button();
+            this.cleanTextButton = new System.Windows.Forms.Button();
+            this.resetCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // teamsListBox
@@ -118,11 +120,35 @@
             this.pickNumberDown.UseVisualStyleBackColor = true;
             this.pickNumberDown.Click += new System.EventHandler(this.pickNumberDown_Click);
             // 
+            // cleanTextButton
+            // 
+            this.cleanTextButton.Enabled = false;
+            this.cleanTextButton.Location = new System.Drawing.Point(264, 330);
+            this.cleanTextButton.Name = "cleanTextButton";
+            this.cleanTextButton.Size = new System.Drawing.Size(75, 23);
+            this.cleanTextButton.TabIndex = 10;
+            this.cleanTextButton.Text = "Reset";
+            this.cleanTextButton.UseVisualStyleBackColor = true;
+            this.cleanTextButton.Click += new System.EventHandler(this.cleanTextButton_Click);
+            // 
+            // resetCheckbox
+            // 
+            this.resetCheckbox.AutoSize = true;
+            this.resetCheckbox.Location = new System.Drawing.Point(264, 307);
+            this.resetCheckbox.Name = "resetCheckbox";
+            this.resetCheckbox.Size = new System.Drawing.Size(60, 17);
+            this.resetCheckbox.TabIndex = 11;
+            this.resetCheckbox.Text = "Reset?";
+            this.resetCheckbox.UseVisualStyleBackColor = true;
+            this.resetCheckbox.CheckedChanged += new System.EventHandler(this.resetCheckbox_CheckedChanged);
+            // 
             // Draft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 440);
+            this.Controls.Add(this.resetCheckbox);
+            this.Controls.Add(this.cleanTextButton);
             this.Controls.Add(this.pickNumberDown);
             this.Controls.Add(this.pickNumberUp);
             this.Controls.Add(this.ontheclockLabel);
@@ -148,5 +174,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button pickNumberUp;
         private System.Windows.Forms.Button pickNumberDown;
+        private System.Windows.Forms.Button cleanTextButton;
+        private System.Windows.Forms.CheckBox resetCheckbox;
     }
 }

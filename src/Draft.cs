@@ -12,8 +12,6 @@ namespace broadcast
 {
     public partial class Draft : Form
     {
-        IList<Pick> Picks;
-
         private int pickNumber;
 
         private FileService files;
@@ -21,13 +19,17 @@ namespace broadcast
         public Draft()
         {
             InitializeComponent();
+            InitializeDraft();
+        }
+
+        private void InitializeDraft()
+        {
             files = new FileService();
-            
+
             files.Write("ticker.txt", "Draft Selection:  ");
 
             pickNumber = 1;
 
-            Picks = new List<Pick>();
 
             columnHeader1.Width = draftOrder.Size.Width - 20;
 
@@ -142,7 +144,7 @@ namespace broadcast
 
             files.Write("first-pick.txt", pick);
 
-            files.Concat("ticker.txt", "     |     " + pick );
+            files.Concat("ticker.txt", "     |     " + pick);
 
             pickNumber++;
             UpdateOnTheClockLabel();
@@ -163,6 +165,25 @@ namespace broadcast
         {
             pickNumber--;
             UpdateOnTheClockLabel();
+        }
+
+        private void resetCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            cleanTextButton.Enabled = resetCheckbox.Checked;
+        }
+
+        private void cleanTextButton_Click(object sender, EventArgs e)
+        {
+            files.Write("ticker.txt", "Draft Selection:  ");
+            files.Write("first-pick.txt", "");
+            files.Write("second-pick.txt", "");
+            files.Write("third-pick.txt", "");
+            files.Write("fourth-pick.txt", "");
+            files.Write("fifth-pick.txt", "");
+            files.Write("sixth-pick.txt", "");
+
+            InitializeDraft();
+            draftOrder.Items.Clear();
         }
     }
 }
