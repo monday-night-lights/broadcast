@@ -1,0 +1,39 @@
+:host {
+    width: 100vw;
+    height: 100vh;
+
+    .score-overlay {
+        border: 1 solid black;
+        width: 100%;
+        min-height: 70px;
+        background-color: black;
+
+        display: flex;
+
+        & > *
+        {
+            flex: 1 1 0;
+            padding: 0 0 0 10px;
+        }
+
+        .game-info{
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+
+    .announcers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
+
+        announcer { 
+            margin: 10px;
+        }
+    }
+}

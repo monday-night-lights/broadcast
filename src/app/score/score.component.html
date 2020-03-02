@@ -1,0 +1,12 @@
+<div class="score-overlay">
+    <team [team]="awayTeam" [style.background-color]="awayTeam.color"></team>
+    <div  class="game-info">Period {{period}} 
+        <countdown [config]="{ leftTime: 900, format: 'm:ss' }"></countdown>
+    </div>
+    <team [team]="homeTeam" [style.background-color]="homeTeam.color"></team>
+</div>
+<!-- <div class="announcers">
+    <announcer [announcer]="playByPlay"></announcer>
+    <announcer [announcer]="colorCommentary"></announcer>
+    <announcer [announcer]="fieldReporter"></announcer>
+</div> -->

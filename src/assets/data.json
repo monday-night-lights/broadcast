@@ -1,0 +1,33 @@
+{
+    "gameStartTime": "9:00pm",
+    "awayTeam": {
+        "name": "Americans",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Rochester_Americans.svg/1200px-Rochester_Americans.svg.png",
+        "color": "#FF0000",
+        "gamesWon": 0,
+        "score": 0
+    },
+    "homeTeam": {
+        "name": "Nordiques",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Quebec_Nordiques_Logo.svg/1200px-Quebec_Nordiques_Logo.svg.png",
+        "color": "#006DB0",
+        "gamesWon": 0,
+        "score": 0
+    },
+    "period": 1,
+    "playByPlay": {
+        "name": "Paul Biliti",
+        "title": "Play by Play",
+        "subtitle": "Assistant to Dickie Dunn"
+    },
+    "colorCommentary": {
+        "name": "Tim D'Onofrio",
+        "title": "Color Commentary",
+        "subtitle": "Turtle Tim, Ducks GM"
+    },
+    "fieldReporter": {
+        "name": "Chad Paulinski",
+        "title": "Field Reporter",
+        "subtitle": "Between the Benches"
+    }
+}

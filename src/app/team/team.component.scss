@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    font-size: 36px;
+    align-items: center;
+
+    .name-container {
+
+        left: 0;
+        min-width: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .logo {
+            max-height: 60px;
+        }
+
+        .name {
+            color: white;
+        }
+    }
+
+    .score-container {
+
+        min-width: 20%;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .score {
+           
+            color: white;
+            text-align: center;
+        }
+    }
+}
