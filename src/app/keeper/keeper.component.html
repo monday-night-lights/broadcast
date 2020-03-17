@@ -1,4 +1,9 @@
 <div class="container">
+    <div class="jumbo">
+        <img src="https://mnlhl.com/img/mnlhl-logo.png" /> 
+        <h1>Scorekeeper</h1>
+    </div>
+
     <form #scoreForm="ngForm" (ngSubmit)="updateScore(scoreForm.form)">
         <button class="btn btn-primary" [disabled]="!scoreForm.valid">Submit</button>
         <div class="row">
@@ -13,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="homeTeam-logo">Home Team Logo</label>
-                    <input type="text" class="form-control" name="homeTeam-logo"[(ngModel)]="homeTeam.logo" />
+                    <input type="text" class="form-control" name="homeTeam-logo" [(ngModel)]="homeTeam.logo" />
                     <img class="thumbnail" src="{{homeTeam.logo || ''}}" />
                 </div>
                 <div class="form-group">
@@ -23,13 +28,14 @@
                 </div>
                 <div class="form-group">
                     <label for="homeTeam-gamesWon">Away Team Games Won</label>
-                    <input type="number" class="form-control" name="homeTeam-gamesWon" [(ngModel)]="homeTeam.gamesWon"  />
+                    <input type="number" class="form-control" name="homeTeam-gamesWon"
+                        [(ngModel)]="homeTeam.gamesWon" />
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-group">
                     <label for="awayTeam-name">Away Team Name</label>
-                    <input type="text" class="form-control" name="awayTeam-name" [(ngModel)]="awayTeam.teamName"  />
+                    <input type="text" class="form-control" name="awayTeam-name" [(ngModel)]="awayTeam.teamName" />
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-score">Away Team Score</label>
@@ -37,20 +43,21 @@
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-logo">Away Team Logo</label>
-                    <input type="text" class="form-control" name="awayTeam-logo" [(ngModel)]="awayTeam.logo"  />
+                    <input type="text" class="form-control" name="awayTeam-logo" [(ngModel)]="awayTeam.logo" />
                     <img class="thumbnail" src="{{awayTeam.logo || '' }}" />
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-color">Away Team Color</label>
-                    <input type="color" class="form-control" name="awayTeam-color" [(ngModel)]="awayTeam.color"  />
+                    <input type="color" class="form-control" name="awayTeam-color" [(ngModel)]="awayTeam.color" />
                     <!-- <div class="mini-box" style.background-color="{{awayTeam.color}}"></div> -->
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-gamesWon">Away Team Games Won</label>
-                    <input type="number" class="form-control" name="awayTeam-gamesWon" [(ngModel)]="awayTeam.gamesWon"  />
+                    <input type="number" class="form-control" name="awayTeam-gamesWon"
+                        [(ngModel)]="awayTeam.gamesWon" />
                 </div>
             </div>
-            <hr/>
+            <hr />
         </div>
         <div class="row">
             <div class="col-md">
@@ -59,13 +66,14 @@
                     <input type="number" class="form-control" name="period" [(ngModel)]="period" />
                 </div>
             </div>
-            <hr/>
+            <hr />
         </div>
         <div class="row">
             <div class="col-md">
                 <div class="form-group">
                     <label for="playByPlayName">Play by Play Announcer Name</label>
-                    <input type="text" class="form-control" name="playByPlay-announcerName" [(ngModel)]="playByPlay.announcerName" />
+                    <input type="text" class="form-control" name="playByPlay-announcerName"
+                        [(ngModel)]="playByPlay.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="playByPlayName">Play by Play Announcer Title</label>
@@ -73,35 +81,42 @@
                 </div>
                 <div class="form-group">
                     <label for="playByPlayTitle">Play by Play Announcer Subtitle</label>
-                    <input type="text" class="form-control" name="playByPlay-subtitle" [(ngModel)]="playByPlay.subtitle" />
+                    <input type="text" class="form-control" name="playByPlay-subtitle"
+                        [(ngModel)]="playByPlay.subtitle" />
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-group">
                     <label for="colorCommentaryName">Color Commentary Announcer Name</label>
-                    <input type="text" class="form-control" name="colorCommentary-announcerName" [(ngModel)]="colorCommentary.announcerName" />
+                    <input type="text" class="form-control" name="colorCommentary-announcerName"
+                        [(ngModel)]="colorCommentary.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="colorCommentaryName">Color Commentary Announcer Title</label>
-                    <input type="text" class="form-control" name="colorCommentary-title" [(ngModel)]="colorCommentary.title" />
+                    <input type="text" class="form-control" name="colorCommentary-title"
+                        [(ngModel)]="colorCommentary.title" />
                 </div>
                 <div class="form-group">
                     <label for="colorCommentaryTitle">Color Commentary Announcer Subtitle</label>
-                    <input type="text" class="form-control" name="colorCommentary-subtitle" [(ngModel)]="colorCommentary.subtitle" />
+                    <input type="text" class="form-control" name="colorCommentary-subtitle"
+                        [(ngModel)]="colorCommentary.subtitle" />
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-group">
                     <label for="fieldReporterName">Field Reporter Announcer Name</label>
-                    <input type="text" class="form-control" name="fieldReporter-announcerName" [(ngModel)]="fieldReporter.announcerName" />
+                    <input type="text" class="form-control" name="fieldReporter-announcerName"
+                        [(ngModel)]="fieldReporter.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="fieldReporterName">Field Reporter Announcer Title</label>
-                    <input type="text" class="form-control" name="fieldReporter-title" [(ngModel)]="fieldReporter.title" />
+                    <input type="text" class="form-control" name="fieldReporter-title"
+                        [(ngModel)]="fieldReporter.title" />
                 </div>
                 <div class="form-group">
                     <label for="fieldReporterTitle">Field Reporter Announcer Subtitle</label>
-                    <input type="text" class="form-control" name="fieldReporter-subtitle" [(ngModel)]="fieldReporter.subtitle" />
+                    <input type="text" class="form-control" name="fieldReporter-subtitle"
+                        [(ngModel)]="fieldReporter.subtitle" />
                 </div>
             </div>
         </div>

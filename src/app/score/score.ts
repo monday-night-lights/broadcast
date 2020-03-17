@@ -5,10 +5,10 @@ import { Announcer } from '../announcer/announcer';
 export class Score {
     homeTeam: Team;
     awayTeam: Team;
-  
+
     period: number;
     timeLeft: Time;
-  
+
     playByPlay: Announcer;
     colorCommentary: Announcer;
     fieldReporter: Announcer;

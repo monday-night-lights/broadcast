@@ -52,4 +52,22 @@ export class ScoreComponent implements OnInit {
         }
       });
   }
+
+  private _seriesLead: string;
+  public get seriesLead(): string {
+    if (this.homeTeam.gamesWon === this.awayTeam.gamesWon) {
+      this._seriesLead = `Series Tied ${ this.homeTeam.gamesWon }-${ this.awayTeam.gamesWon }`;
+    }
+    else if (this.homeTeam.gamesWon > this.awayTeam.gamesWon) {
+      this._seriesLead = `${ this.homeTeam.teamName } Lead Series ${ this.homeTeam.gamesWon }-${ this.awayTeam.gamesWon }`;
+    }
+    else if (this.homeTeam.gamesWon < this.awayTeam.gamesWon) {
+      this._seriesLead = `${ this.awayTeam.teamName } Lead Series ${ this.awayTeam.gamesWon }-${ this.homeTeam.gamesWon }`;
+    }
+    else {
+      this._seriesLead = "failure";
+    }
+
+    return this._seriesLead;
+  }
 }

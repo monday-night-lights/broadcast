@@ -1,3 +1,5 @@
+@import "../../styles.scss";
+
 :host {
     width: 100vw;
     height: 100vh;
@@ -5,7 +7,7 @@
     .score-overlay {
         border: 1 solid black;
         width: 100%;
-        min-height: 70px;
+        min-height: $overlayheight;
         background-color: black;
 
         display: flex;
@@ -23,6 +25,14 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+
+            .logo {
+                max-height: $logoheight;
+            }
+
+            .series-lead {
+                margin: 0;
+            }
         }
     }
 

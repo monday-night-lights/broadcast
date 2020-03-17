@@ -1,7 +1,9 @@
 <div class="score-overlay">
     <team [team]="awayTeam" [style.background-color]="awayTeam.color"></team>
-    <div  class="game-info">Period {{period}} 
-        <countdown [config]="{ leftTime: 900, format: 'm:ss' }"></countdown>
+    <div  class="game-info">
+        <img src="https://mnlhl.com/img/mnlhl-logo.png" class="logo" />
+        <h4 class="series-lead">{{seriesLead}}</h4>
+        <div>Period {{period}} </div>
     </div>
     <team [team]="homeTeam" [style.background-color]="homeTeam.color"></team>
 </div>

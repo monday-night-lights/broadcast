@@ -1,3 +1,14 @@
+.jumbo {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 10vw;
+    }
+}
+
 .mini-box {
     width: 100px;
     height: 100px;
