@@ -1,50 +1,34 @@
-<div class="container">
+<div class="container-large">
     <div class="jumbo">
-        <img src="https://mnlhl.com/img/mnlhl-logo.png" /> 
+        <img src="https://mnlhl.com/img/mnlhl-logo.png" />
         <h1>Scorekeeper</h1>
     </div>
 
     <form #scoreForm="ngForm" (ngSubmit)="updateScore(scoreForm.form)">
-        <button class="btn btn-primary" [disabled]="!scoreForm.valid">Submit</button>
+        <button class="btn btn-primary submit" [disabled]="!scoreForm.valid">Submit</button>
         <div class="row">
             <div class="col-md">
                 <div class="form-group">
-                    <label for="homeTeam-name">Home Team Name</label>
-                    <input type="text" class="form-control" name="homeTeam-name" [(ngModel)]="homeTeam.teamName" />
-                </div>
-                <div class="form-group">
-                    <label for="homeTeam-score">Home Team Score</label>
-                    <input type="number" class="form-control" name="homeTeam-score" [(ngModel)]="homeTeam.score" />
-                </div>
-                <div class="form-group">
-                    <label for="homeTeam-logo">Home Team Logo</label>
-                    <input type="text" class="form-control" name="homeTeam-logo" [(ngModel)]="homeTeam.logo" />
-                    <img class="thumbnail" src="{{homeTeam.logo || ''}}" />
-                </div>
-                <div class="form-group">
-                    <label for="homeTeam-color">Home Team Color</label>
-                    <input type="color" class="form-control" name="homeTeam-color" [(ngModel)]="homeTeam.color" />
-                    <!-- <div class="mini-box" style.background-color="{{homeTeam.color}}"></div> -->
-                </div>
-                <div class="form-group">
-                    <label for="homeTeam-gamesWon">Away Team Games Won</label>
-                    <input type="number" class="form-control" name="homeTeam-gamesWon"
-                        [(ngModel)]="homeTeam.gamesWon" />
+                    <label for="period">Period</label>
+                    <input type="number" class="form-control" name="period" [(ngModel)]="period" />
                 </div>
             </div>
-            <div class="col-md">
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-xs">
+                <div class="form-group">
+                    <img class="thumbnail" src="{{awayTeam.logo || '' }}" />
+                    <label for="awayTeam-score">Away Team Score</label>
+                    <input type="number" class="form-control" name="awayTeam-score" [(ngModel)]="awayTeam.score" />
+                </div>
                 <div class="form-group">
                     <label for="awayTeam-name">Away Team Name</label>
                     <input type="text" class="form-control" name="awayTeam-name" [(ngModel)]="awayTeam.teamName" />
                 </div>
                 <div class="form-group">
-                    <label for="awayTeam-score">Away Team Score</label>
-                    <input type="number" class="form-control" name="awayTeam-score" [(ngModel)]="awayTeam.score" />
-                </div>
-                <div class="form-group">
                     <label for="awayTeam-logo">Away Team Logo</label>
                     <input type="text" class="form-control" name="awayTeam-logo" [(ngModel)]="awayTeam.logo" />
-                    <img class="thumbnail" src="{{awayTeam.logo || '' }}" />
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-color">Away Team Color</label>
@@ -58,15 +42,31 @@
                 </div>
             </div>
             <hr />
-        </div>
-        <div class="row">
-            <div class="col-md">
+            <div class="col-xs">
                 <div class="form-group">
-                    <label for="period">Period</label>
-                    <input type="number" class="form-control" name="period" [(ngModel)]="period" />
+                    <img class="thumbnail" src="{{homeTeam.logo || ''}}" />
+                    <label for="homeTeam-score">Home Team Score</label>
+                    <input type="number" class="form-control" name="homeTeam-score" [(ngModel)]="homeTeam.score" />
+                </div>
+                <div class="form-group">
+                    <label for="homeTeam-name">Home Team Name</label>
+                    <input type="text" class="form-control" name="homeTeam-name" [(ngModel)]="homeTeam.teamName" />
+                </div>
+                <div class="form-group">
+                    <label for="homeTeam-logo">Home Team Logo</label>
+                    <input type="text" class="form-control" name="homeTeam-logo" [(ngModel)]="homeTeam.logo" />
+                </div>
+                <div class="form-group">
+                    <label for="homeTeam-color">Home Team Color</label>
+                    <input type="color" class="form-control" name="homeTeam-color" [(ngModel)]="homeTeam.color" />
+                    <!-- <div class="mini-box" style.background-color="{{homeTeam.color}}"></div> -->
+                </div>
+                <div class="form-group">
+                    <label for="homeTeam-gamesWon">Away Team Games Won</label>
+                    <input type="number" class="form-control" name="homeTeam-gamesWon"
+                        [(ngModel)]="homeTeam.gamesWon" />
                 </div>
             </div>
-            <hr />
         </div>
         <div class="row">
             <div class="col-md">
@@ -120,6 +120,6 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" [disabled]="!scoreForm.valid">Submit</button>
+        <button class="btn btn-primary submit" [disabled]="!scoreForm.valid">Submit</button>
     </form>
 </div>
