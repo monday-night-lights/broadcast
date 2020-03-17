@@ -7,7 +7,7 @@ export class Score {
     awayTeam: Team;
   
     period: number;
-    time: Time;
+    timeLeft: Time;
   
     playByPlay: Announcer;
     colorCommentary: Announcer;

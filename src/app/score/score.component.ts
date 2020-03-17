@@ -7,6 +7,8 @@ import { Team } from '../team/team';
 import { Announcer } from '../announcer/announcer';
 import { Http } from '@angular/http';
 import { FileService } from '../services/file-service';
+import { interval } from 'rxjs';
+import { startWith, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'score',
@@ -24,28 +26,30 @@ export class ScoreComponent implements OnInit {
   time: Time;
   gameStartTime: string;
 
-
   playByPlay: Announcer;
   colorCommentary: Announcer;
   fieldReporter: Announcer;
 
   constructor(@Inject(FileService) fileService: FileService) {
     this.fileService = fileService;
-    this.fileService.getJSON().subscribe(val => {
-      if(val != null) {
-        console.log(val);
-        this.gameStartTime = val.gameStartTime;
-        this.awayTeam = val.awayTeam;
-        this.homeTeam = val.homeTeam;
-        this.period = 1;
-        this.playByPlay = val.playByPlay
-        this.colorCommentary = val.colorCommentary
-        this.fieldReporter = val.fieldReporter
-      }
-    });
   }
 
   ngOnInit() {
+    interval(5000)
+      .pipe(
+        startWith(0),
+        switchMap(() => this.fileService.getScore())
+      )
+      .subscribe(val => {
+        if (val != null) {
+          //this.gameStartTime = val.gameStartTime;
+          this.homeTeam = val.homeTeam;
+          this.awayTeam = val.awayTeam;
+          this.period = 1;
+          this.playByPlay = val.playByPlay
+          this.colorCommentary = val.colorCommentary
+          this.fieldReporter = val.fieldReporter
+        }
+      });
   }
-
 }

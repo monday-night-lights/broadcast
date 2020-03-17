@@ -25,6 +25,7 @@ import { FileService } from './services/file-service'
     FormsModule,
     AppRoutingModule,
     CountdownModule,
+    HttpClientModule,
     HttpModule
   ],
   providers: [HttpModule, HttpClientModule, FileService],

@@ -1,10 +1,10 @@
 export class Announcer {
-    name: string;
+    announcerName: string;
     title: string;
     subtitle: string;
     
     constructor(name: string, title: string, subtitle: string) {
-        this.name = name;
+        this.announcerName = name;
         this.title = title;
         this.subtitle = subtitle;
     }

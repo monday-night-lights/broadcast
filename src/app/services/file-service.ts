@@ -1,38 +1,33 @@
 import { Component, OnInit, Injectable, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { saveAs } from 'file-saver/FileSaver';
 import _jsonURL from '../../assets/data.json';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 import { Score } from '../score/score.js';
+import { Url } from 'url';
 
 @Injectable()
-export class FileService implements OnInit {
+export class FileService {
+    private serverlessAPI = 'https://9bgynci5o2.execute-api.us-east-2.amazonaws.com/dev/broadcast/2270df80-6679-11ea-83a9-6900520bea79';
+    private apiUrl: Url;
 
-    private _jsonURL = 'assets/data.json';
-
-    constructor(@Inject(Http) private http: Http) {
-        var object;
-        this.getJSON().subscribe(data => object = data, error => console.log(error));
+    constructor(private httpClient: HttpClient) {
+        this.apiUrl = new URL(this.serverlessAPI);
     }
 
-    public getJSON(): Observable<any> {
-        return this.http.get(this._jsonURL).pipe(
-            map((response: any) => response.json()));
+    public getScore(): Observable<Score> {
+        return this.httpClient.get<Score>(this.apiUrl.toString());
     }
 
-    public saveJSON(response: Score): void {
-        const filename = this._jsonURL
-        const blob = new Blob([JSON.stringify(response)], { type: 'text/json' });
-        console.log(blob);
-        saveAs(blob, filename);
-    }
+    public saveScore(score: Score): Observable<Score> {
+        console.log(score);
 
-    public saveJSON2(score: Score): void {
-        var file = new File([JSON.stringify(score)], this._jsonURL, {type: "text/plain;charset=utf-8", });
-        // FileSaver.saveAs(file);
-    }
-
-    ngOnInit() {
+        var response = this.httpClient.put<Score>(this.apiUrl.toString(), JSON.stringify(score)).pipe(x => {
+            console.log(x);
+            return x;
+        });
+        return response;
     }
 }

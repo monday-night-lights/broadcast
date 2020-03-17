@@ -34,10 +34,10 @@ export class KeeperComponent implements OnInit {
     this.fileService = fileService;
 
 
-    this.fileService.getJSON().subscribe(val => {
+    this.fileService.getScore().subscribe(val => {
       if (val != null) {
         console.log(val);
-        this.gameStartTime = val.gameStartTime;
+        //this.gameStartTime = val.gameStartTime;
         this.homeTeam = val.homeTeam;
         this.awayTeam = val.awayTeam;
         this.period = 1;
@@ -64,11 +64,15 @@ export class KeeperComponent implements OnInit {
     score.period = value["period"];
     score.homeTeam = new Team(value["homeTeam-name"], value["homeTeam-logo"], value["homeTeam-color"], value["homeTeam-gamesWon"], value["homeTeam-score"]);
     score.awayTeam = new Team(value["awayTeam-name"], value["awayTeam-logo"], value["awayTeam-color"], value["awayTeam-gamesWon"], value["awayTeam-score"]);
-    score.playByPlay = new Announcer(value["playByPlay-name"], value["playByPlay-title"],value["playByPlay-subtitle"]);
-    score.colorCommentary =  new Announcer(value["colorCommentary-name"], value["colorCommentary-title"],value["colorCommentary-subtitle"]);
-    score.fieldReporter =  new Announcer(value["fieldReporter-name"], value["fieldReporter-title"],value["fieldReporter-subtitle"]);
+    score.playByPlay = new Announcer(value["playByPlay-announcerName"], value["playByPlay-title"], value["playByPlay-subtitle"]);
+    score.colorCommentary = new Announcer(value["colorCommentary-announcerName"], value["colorCommentary-title"], value["colorCommentary-subtitle"]);
+    score.fieldReporter = new Announcer(value["fieldReporter-announcerName"], value["fieldReporter-title"], value["fieldReporter-subtitle"]);
 
     console.log(score);
-    this.fileService.saveJSON(score)
+    this.fileService.saveScore(score).subscribe(val => {
+
+      console.log(val);
+
+    });
   }
 }
