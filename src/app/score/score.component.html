@@ -1,11 +1,11 @@
 <div class="score-overlay">
     <team [team]="awayTeam" [style.background-color]="awayTeam.color"></team>
     <div  class="game-info">
+        <div class="period">Period {{period}} </div>
         <img src="https://mnlhl.com/img/mnlhl-logo.png" class="logo" />
         <h4 class="series-lead">{{seriesLead}}</h4>
-        <div>Period {{period}} </div>
     </div>
-    <team [team]="homeTeam" [style.background-color]="homeTeam.color"></team>
+    <team [team]="homeTeam" [style.background-color]="homeTeam.color" class="homeTeam"></team>
 </div>
 <!-- <div class="announcers">
     <announcer [announcer]="playByPlay"></announcer>
