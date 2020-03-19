@@ -12,9 +12,7 @@ export class ScoreDisplay {
     time: Time;
     gameStartTime: string;
 
-
     playByPlay: Announcer;
     colorCommentary: Announcer;
     fieldReporter: Announcer;
-
 }

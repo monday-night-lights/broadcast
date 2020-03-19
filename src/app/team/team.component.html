@@ -5,3 +5,8 @@
 <div class="score-container">
     <div class="score">{{this.team.score}}</div>
 </div>
+<div class="goal-banner" [ngClass]="{'visible': this.showGoalBanner === true }">
+    <img src="https://thumbs.gfycat.com/GlossyWindingJaguar.webp" class="goal-light" />
+    <h1>Goal</h1>
+    <img src="https://thumbs.gfycat.com/GlossyWindingJaguar.webp" class="goal-light" />
+</div>

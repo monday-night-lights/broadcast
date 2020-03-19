@@ -10,7 +10,8 @@ import { ScoreComponent } from './score/score.component';
 import { AnnouncerComponent } from './announcer/announcer.component';
 import { TeamComponent } from './team/team.component';
 import { KeeperComponent } from './keeper/keeper.component';
-import { FileService } from './services/file-service'
+import { FileService } from './services/file-service';
+import { AnnouncersComponent } from './announcers/announcers.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FileService } from './services/file-service'
     ScoreComponent,
     AnnouncerComponent,
     TeamComponent,
-    KeeperComponent
+    KeeperComponent,
+    AnnouncersComponent
   ],
   imports: [
     BrowserModule,

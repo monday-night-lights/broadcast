@@ -1,13 +1,43 @@
 :host {
-    border: 1px solid black;
 
+    background-color: white;
+    border-left: 10px groove white;
     display: flex;
-    flex-direction: column;
-    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 50px;
+    min-width: 750px;
+    box-shadow: 2px 2px 5px black;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+ 
+    }
+
+    .right {
+        padding-top: 20px;
+        color: #1D9DEC;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .insta-logo {
+            height: 20px;
+            line-height: 1.2;
+            margin: 7px;
+        }
+    }
+
+    h1 {
+        font-weight: 700;
+    }
 
     .details {
         display: flex;
         flex-direction: column;
         margin: 0;
+        background-color: rgba(0, 0, 0, .2);
+        width: 100%;
     }
 }
