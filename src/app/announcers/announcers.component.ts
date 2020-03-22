@@ -16,24 +16,24 @@ export class AnnouncersComponent implements OnInit {
   playByPlay: Announcer;
   colorCommentary: Announcer;
   fieldReporter: Announcer;
+  player: Announcer;
 
   showPlay: boolean;
   showColor: boolean;
   showField: boolean;
 
-  constructor(@Inject(FileService) fileService: FileService, private route: ActivatedRoute) { 
+  constructor(@Inject(FileService) fileService: FileService, private route: ActivatedRoute) {
     this.fileService = fileService;
     this.mapScore(this.fileService.getScore());
   }
 
-
   ngOnInit() {
     this.route.queryParams
-    .subscribe(params => {
-      this.showPlay = params.showPlay;
-      this.showColor = params.showColor;
-      this.showField = params.showField;
-    });
+      .subscribe(params => {
+        this.showPlay = params.showPlay;
+        this.showColor = params.showColor;
+        this.showField = params.showField;
+      });
 
     interval(5000)
       .pipe(
@@ -48,6 +48,13 @@ export class AnnouncersComponent implements OnInit {
       this.playByPlay = val.playByPlay
       this.colorCommentary = val.colorCommentary
       this.fieldReporter = val.fieldReporter
+      this.player = val.player;
+
+      if (val.player === null || val.player.announcerName === null || val.player.title === null) {
+        this.player == null;
+      }
+
+      console.log(this.player);
     }
   }
 }

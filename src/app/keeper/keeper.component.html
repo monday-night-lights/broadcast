@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="jumbo">
         <img src="https://mnlhl.com/img/mnlhl-logo.png" />
         <h1 style="margin: 0">Scorekeeper</h1>
@@ -76,14 +76,15 @@
                         [(ngModel)]="playByPlay.announcerName" />
                 </div>
                 <div class="form-group">
-                    <label for="playByPlayName">Play by Play Announcer Title</label>
+                    <label for="playByPlayTitle">Play by Play Announcer Title</label>
                     <input type="text" class="form-control" name="playByPlay-title" [(ngModel)]="playByPlay.title" />
                 </div>
                 <div class="form-group">
-                    <label for="playByPlayTitle">Play by Play Announcer Subtitle</label>
+                    <label for="playByPlaySubtitle">Play by Play Announcer Subtitle</label>
                     <input type="text" class="form-control" name="playByPlay-subtitle"
                         [(ngModel)]="playByPlay.subtitle" />
                 </div>
+                <hr/>
             </div>
             <div class="col-md">
                 <div class="form-group">
@@ -92,15 +93,16 @@
                         [(ngModel)]="colorCommentary.announcerName" />
                 </div>
                 <div class="form-group">
-                    <label for="colorCommentaryName">Color Commentary Announcer Title</label>
+                    <label for="colorCommentaryTitle">Color Commentary Announcer Title</label>
                     <input type="text" class="form-control" name="colorCommentary-title"
                         [(ngModel)]="colorCommentary.title" />
                 </div>
                 <div class="form-group">
-                    <label for="colorCommentaryTitle">Color Commentary Announcer Subtitle</label>
+                    <label for="colorCommentarySubtitle">Color Commentary Announcer Subtitle</label>
                     <input type="text" class="form-control" name="colorCommentary-subtitle"
                         [(ngModel)]="colorCommentary.subtitle" />
                 </div>
+                <hr/>
             </div>
             <div class="col-md">
                 <div class="form-group">
@@ -109,15 +111,32 @@
                         [(ngModel)]="fieldReporter.announcerName" />
                 </div>
                 <div class="form-group">
-                    <label for="fieldReporterName">Field Reporter Announcer Title</label>
+                    <label for="fieldReporterTitle">Field Reporter Announcer Title</label>
                     <input type="text" class="form-control" name="fieldReporter-title"
                         [(ngModel)]="fieldReporter.title" />
                 </div>
                 <div class="form-group">
-                    <label for="fieldReporterTitle">Field Reporter Announcer Subtitle</label>
+                    <label for="fieldReporterSubtitle">Field Reporter Announcer Subtitle</label>
                     <input type="text" class="form-control" name="fieldReporter-subtitle"
                         [(ngModel)]="fieldReporter.subtitle" />
                 </div>
+                <hr/>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="playerName">Interviewed Player Name</label>
+                    <input type="text" class="form-control" name="player-announcerName"
+                        [(ngModel)]="player.announcerName" />
+                </div>
+                <div class="form-group">
+                    <label for="playerTitle">Interviewed Player Title</label>
+                    <input type="text" class="form-control" name="player-title" [(ngModel)]="player.title" />
+                </div>
+                <div class="form-group">
+                    <label for="playerSubtitle">Interviewed Player Subtitle</label>
+                    <input type="text" class="form-control" name="player-subtitle" [(ngModel)]="player.subtitle" />
+                </div>
+                <hr style="margin-bottom: 100px" />
             </div>
         </div>
         <button class="btn btn-primary submit full-screen-button" [disabled]="!scoreForm.valid">Submit</button>

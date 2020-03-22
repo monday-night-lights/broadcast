@@ -29,6 +29,7 @@ export class KeeperComponent implements OnInit {
   playByPlay: Announcer;
   colorCommentary: Announcer;
   fieldReporter: Announcer;
+  player: Announcer;
 
   constructor(@Inject(FileService) fileService: FileService) {
     this.fileService = fileService;
@@ -41,9 +42,10 @@ export class KeeperComponent implements OnInit {
         this.homeTeam = val.homeTeam;
         this.awayTeam = val.awayTeam;
         this.period = 1;
-        this.playByPlay = val.playByPlay
-        this.colorCommentary = val.colorCommentary
-        this.fieldReporter = val.fieldReporter
+        this.playByPlay = val.playByPlay;
+        this.colorCommentary = val.colorCommentary;
+        this.fieldReporter = val.fieldReporter;
+        this.player = val.player;
       }
     });
   }
@@ -66,6 +68,7 @@ export class KeeperComponent implements OnInit {
     score.playByPlay = new Announcer(value["playByPlay-announcerName"], value["playByPlay-title"], value["playByPlay-subtitle"]);
     score.colorCommentary = new Announcer(value["colorCommentary-announcerName"], value["colorCommentary-title"], value["colorCommentary-subtitle"]);
     score.fieldReporter = new Announcer(value["fieldReporter-announcerName"], value["fieldReporter-title"], value["fieldReporter-subtitle"]);
+    score.player = new Announcer(value["player-announcerName"], value["player-title"], value["player-subtitle"]);
 
     this.fileService.saveScore(score).subscribe(val => {
       console.log(val);

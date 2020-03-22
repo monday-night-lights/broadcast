@@ -1,5 +1,6 @@
 <div class="announcers">
-    <announcer [announcer]="playByPlay"      [hidden]="!showPlay" ></announcer>
-    <announcer [announcer]="colorCommentary" [hidden]="!showColor"></announcer>
-    <announcer [announcer]="fieldReporter"   [hidden]="!showField"></announcer>
+    <announcer [announcer]="playByPlay"      [hideInsta]="false" [hidden]="!showPlay || player!==null" ></announcer>
+    <announcer [announcer]="colorCommentary" [hideInsta]="false" [hidden]="!showColor || player!==null"></announcer>
+    <announcer [announcer]="fieldReporter"   [hideInsta]="false" [hidden]="!showField || player!==null"></announcer>
+    <announcer [announcer]="player"          [hideInsta]="true"  [hidden]="player===null"></announcer>
 </div>
