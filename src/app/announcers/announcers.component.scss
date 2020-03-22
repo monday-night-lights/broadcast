@@ -12,7 +12,7 @@
         margin: 0;
         justify-content: space-around;
         opacity: 0;
-        animation: fade-in-out 12s 1;
+        animation: fade-in-out 24s infinite;
     }
     
 }
@@ -26,16 +26,16 @@
         opacity: 0;
     }
 
-    20% {
+    15% {
         opacity: 1;
     }
 
-    80% {
+    45% {
         opacity: 1;
     }
 
-    90% {
-        opacity: 1;
+    50% {
+        opacity: 0;
     }
 
     100% {
