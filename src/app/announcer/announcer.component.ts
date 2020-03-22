@@ -9,8 +9,12 @@ import { Announcer } from './announcer';
 export class AnnouncerComponent implements OnInit {
  
   @Input() announcer: Announcer;
+  @Input() hideInsta: boolean;
 
   ngOnInit() {
+    if(this.announcer === null)
+    {
+      this.announcer = new Announcer("", "", "");
+    }
   }
-
 }
