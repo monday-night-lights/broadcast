@@ -12,4 +12,5 @@ export class Score {
     playByPlay: Announcer;
     colorCommentary: Announcer;
     fieldReporter: Announcer;
+    player: Announcer;
 }

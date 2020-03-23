@@ -122,6 +122,22 @@
                 </div>
                 <hr />
             </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label for="playerName">Interviewed Player Name</label>
+                    <input type="text" class="form-control" name="player-announcerName"
+                        [(ngModel)]="player.announcerName" />
+                </div>
+                <div class="form-group">
+                    <label for="playerTitle">Interviewed Player Title</label>
+                    <input type="text" class="form-control" name="player-title" [(ngModel)]="player.title" />
+                </div>
+                <div class="form-group">
+                    <label for="playerSubtitle">Interviewed Player Subtitle</label>
+                    <input type="text" class="form-control" name="player-subtitle" [(ngModel)]="player.subtitle" />
+                </div>
+                <hr style="margin-bottom: 100px" />
+            </div>
         </div>
         <button class="btn btn-primary submit full-screen-button" [disabled]="!scoreForm.valid">Submit</button>
     </form>

@@ -12,9 +12,5 @@ export class AnnouncerComponent implements OnInit {
   @Input() hideInsta: boolean;
 
   ngOnInit() {
-    if(this.announcer === null)
-    {
-      this.announcer = new Announcer("", "", "");
-    }
   }
 }

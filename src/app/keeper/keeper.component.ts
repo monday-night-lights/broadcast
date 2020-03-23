@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, ɵConsole } from '@angular/core';
 import { saveAs } from 'file-saver/FileSaver';
 import { Team } from '../team/team';
 import { Time } from '@angular/common';
@@ -25,10 +25,10 @@ export class KeeperComponent implements OnInit {
   time: Time;
   gameStartTime: string;
 
-
   playByPlay: Announcer;
   colorCommentary: Announcer;
   fieldReporter: Announcer;
+  player: Announcer;
 
   constructor(@Inject(FileService) fileService: FileService) {
     this.fileService = fileService;
@@ -36,7 +36,6 @@ export class KeeperComponent implements OnInit {
 
     this.fileService.getScore().subscribe(val => {
       if (val != null) {
-        console.log(val);
         //this.gameStartTime = val.gameStartTime;
         this.homeTeam = val.homeTeam;
         this.awayTeam = val.awayTeam;
@@ -44,6 +43,7 @@ export class KeeperComponent implements OnInit {
         this.playByPlay = val.playByPlay
         this.colorCommentary = val.colorCommentary
         this.fieldReporter = val.fieldReporter
+        this.player = val.player
       }
     });
   }
@@ -51,14 +51,15 @@ export class KeeperComponent implements OnInit {
   ngOnInit() {
   }
 
-  onChanges(): void {
-    this.ngForm.valueChanges.subscribe(val => {
-      console.log(val);
-    });
-  }
+  // onChanges(): void {
+  //   this.ngForm.valueChanges.subscribe(val => {
+  //     console.log(val);
+  //   });
+  // }
 
   public updateScore(scores: any) {
     let value = scores.value;
+    console.log(value);
     let score = new Score();
     score.period = value["period"];
     score.homeTeam = new Team(value["homeTeam-name"], value["homeTeam-logo"], value["homeTeam-color"], value["homeTeam-gamesWon"], value["homeTeam-score"], true);
@@ -66,7 +67,9 @@ export class KeeperComponent implements OnInit {
     score.playByPlay = new Announcer(value["playByPlay-announcerName"], value["playByPlay-title"], value["playByPlay-subtitle"]);
     score.colorCommentary = new Announcer(value["colorCommentary-announcerName"], value["colorCommentary-title"], value["colorCommentary-subtitle"]);
     score.fieldReporter = new Announcer(value["fieldReporter-announcerName"], value["fieldReporter-title"], value["fieldReporter-subtitle"]);
+    score.player = new Announcer(value["player-announcerName"], value["player-title"], value["player-subtitle"]);
 
+    
     this.fileService.saveScore(score).subscribe(val => {
       console.log(val);
     });

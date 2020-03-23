@@ -16,6 +16,7 @@ export class AnnouncersComponent implements OnInit {
   playByPlay: Announcer;
   colorCommentary: Announcer;
   fieldReporter: Announcer;
+  player: Announcer;
 
   showPlay: boolean;
   showColor: boolean;
@@ -44,10 +45,20 @@ export class AnnouncersComponent implements OnInit {
   }
 
   mapScore = (val) => {
+    console.log(val);
     if (val != null) {
-      this.playByPlay = val.playByPlay
-      this.colorCommentary = val.colorCommentary
-      this.fieldReporter = val.fieldReporter
+      this.playByPlay = val.playByPlay;
+      this.colorCommentary = val.colorCommentary;
+      this.fieldReporter = val.fieldReporter;
+      this.player = val.player;
     }
+  }
+
+  public get interviewing() : boolean {
+    console.log(this.player);
+    console.log(this.player.announcerName);
+    console.log(this.player.announcerName !== null);
+    console.log(this.player.announcerName.trim() !== null);
+    return this.player.announcerName !== null && this.player.announcerName.trim() !== "";
   }
 }
