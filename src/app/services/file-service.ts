@@ -4,7 +4,6 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { saveAs } from 'file-saver/FileSaver';
 import _jsonURL from '../../assets/data.json';
 import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
 import { Score } from '../score/score.js';
 import { Url } from 'url';
 
@@ -22,10 +21,7 @@ export class FileService {
     }
 
     public saveScore(score: Score): Observable<Score> {
-        console.log(score);
-
         var response = this.httpClient.put<Score>(this.apiUrl.toString(), JSON.stringify(score)).pipe(x => {
-            console.log(x);
             return x;
         });
         return response;

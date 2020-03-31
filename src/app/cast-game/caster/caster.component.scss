@@ -1,0 +1,18 @@
+h1 {
+  font-weight: 700;
+  font-size: 8rem;
+}
+
+.white-text {
+  color: white;
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.space {
+  margin: 10px;
+}

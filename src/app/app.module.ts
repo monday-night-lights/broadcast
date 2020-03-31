@@ -11,7 +11,10 @@ import { AnnouncerComponent } from './announcer/announcer.component';
 import { TeamComponent } from './team/team.component';
 import { KeeperComponent } from './keeper/keeper.component';
 import { FileService } from './services/file-service';
-import { AnnouncersComponent } from './announcers/announcers.component'
+import { AnnouncersComponent } from './announcers/announcers.component';
+import { CasterComponent } from './cast-game/caster/caster.component';
+import { CastGameService } from './services/castgame-service';
+import { NumberFlipDirective } from './directives/number-flip.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { AnnouncersComponent } from './announcers/announcers.component'
     AnnouncerComponent,
     TeamComponent,
     KeeperComponent,
-    AnnouncersComponent
+    AnnouncersComponent,
+    CasterComponent,
+    NumberFlipDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import { AnnouncersComponent } from './announcers/announcers.component'
     HttpClientModule,
     HttpModule
   ],
-  providers: [HttpModule, HttpClientModule, FileService],
+  providers: [HttpModule, HttpClientModule, FileService, CastGameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,4 +13,6 @@ export class Score {
     colorCommentary: Announcer;
     fieldReporter: Announcer;
     player: Announcer;
+
+    castPoints: Array<number>;
 }

@@ -14,3 +14,11 @@ body {
 $overlayheight: 100px;
 $logomargin: 5px;
 $logoheight: $overlayheight - $logomargin*2;
+
+@mixin fade-transition($element) {
+	-webkit-transition: $element 0.15s ease-in-out;
+	-moz-transition: $element 0.15s ease-in-out;
+	-ms-transition: $element 0.15s ease-in-out;
+	-o-transition: $element 0.15s ease-in-out;
+	transition: $element 0.15s ease-in-out;
+}

@@ -16,8 +16,6 @@ export class TeamComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-
     if (changes.team.previousValue === null) {
       return;
     }

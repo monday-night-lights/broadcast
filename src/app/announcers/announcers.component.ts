@@ -45,7 +45,6 @@ export class AnnouncersComponent implements OnInit {
   }
 
   mapScore = (val) => {
-    console.log(val);
     if (val != null) {
       this.playByPlay = val.playByPlay;
       this.colorCommentary = val.colorCommentary;
