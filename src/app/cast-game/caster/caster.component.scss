@@ -1,10 +1,25 @@
+.jumbo {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+
+  img {
+      width: 20vw;
+  }
+}
+
 h1 {
   font-weight: 700;
   font-size: 8rem;
 
-  &.title {
-    text-align: center;
-  }
+}
+
+.title {
+  text-align: center;
 }
 
 .white-text {

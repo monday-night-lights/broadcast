@@ -1,10 +1,13 @@
 <h1 [ngClass]="{'white-text': white }" [appNumberFlip]="this.points" *ngIf="show"></h1>
 
 <div class="container-fluid" *ngIf="!show">
-  <h1 class="title">Cast Game</h1>
+  <div class="jumbo">
+    <img src="https://mnlhl.com/img/mnlhl-logo.png" />
+    <h1 class="title">Cast Game</h1>
+  </div>
   <div class="row">
     <div class="col-md">
-      <h2>Player 1</h2>
+      <h2 class="title">Player 1</h2>
       <div class="player">
         <input type="button" class="btn btn-danger" (click)="decrement(0)" value="<<<" />
         <h3 class="display-4 space">{{results[0]}}</h3>
@@ -12,7 +15,7 @@
       </div>
     </div>
     <div class="col-md">
-      <h2>Player 2</h2>
+      <h2 class="title">Player 2</h2>
       <div class="player">
         <input type="button" class="btn btn-danger" (click)="decrement(1)" value="<<<" />
         <h3 class="display-4 space">{{results[1]}}</h3>
@@ -22,7 +25,7 @@
   </div>
   <div class="row">
     <div class="col-md">
-      <h2>Player 3</h2>
+      <h2 class="title">Player 3</h2>
       <div class="player">
         <input type="button" class="btn btn-danger" (click)="decrement(2)" value="<<<" />
         <h3 class="display-4 space">{{results[2]}}</h3>
@@ -30,7 +33,7 @@
       </div>
     </div>
     <div class="col-md">
-      <h2>Player 4</h2>
+      <h2 class="title">Player 4</h2>
       <div class="player">
         <input type="button" class="btn btn-danger" (click)="decrement(3)" value="<<<" />
         <h3 class="display-4 space">{{results[3]}}</h3>
