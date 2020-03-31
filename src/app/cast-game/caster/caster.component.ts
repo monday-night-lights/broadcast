@@ -38,14 +38,14 @@ export class CasterComponent implements OnInit {
   decrement(index: number) {
     this.results[index] = this.results[index] - 1;
     this.service.SaveCastGameScore(this.results).subscribe(val => {
-      console.log(val);
+      this.results = val;
     });;
   }
 
   increment(index: number) {
     this.results[index] = this.results[index] + 1;
     this.service.SaveCastGameScore(this.results).subscribe(val => {
-      console.log(val);
+      this.results = val;
     });;
   }
 }

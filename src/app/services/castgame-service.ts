@@ -28,7 +28,6 @@ export class CastGameService {
         var points = new Score();
         points.castPoints = castGameScore;
         var response = this.httpClient.put<Score>(this.apiUrl.toString() + 'cast-game/' + this.id, JSON.stringify(points)).pipe(map(x => {
-            console.log(x);
             return x.castPoints;
         }));
         return response;
