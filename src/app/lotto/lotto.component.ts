@@ -12,9 +12,7 @@ import { LottoService } from './lotto.service';
 export class LottoComponent implements OnInit {
 
   lottoService: LottoService
-  private draftOrder: string[]
-  private picksLeft: number = 6;
-  private teams = ["Nordiques", "Maroons", "North Stars", "Americans", "Tigers", "Whalers"];
+  draftOrder: string[]
 
   constructor(@Inject(LottoService) lottoService: LottoService) {
     this.lottoService = lottoService;
@@ -22,7 +20,6 @@ export class LottoComponent implements OnInit {
 
   ngOnInit() {
     this.draftOrder = new Array();
-    // "Nordiques", "Maroons", "North Stars", "Americans", "Tigers", "Whalers", "Golden Seals"
     this.draftOrder.push("Golden Seals");
 
     interval(1000)
