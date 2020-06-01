@@ -15,4 +15,5 @@ export class Score {
     player: Announcer;
 
     castPoints: Array<number>;
+    lottoBalls: Array<object>;
 }

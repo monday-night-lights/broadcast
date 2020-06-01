@@ -1,0 +1,54 @@
+.draft-order {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 400px;
+  font-size: 36px;
+  height: 100vh;
+  justify-content: space-evenly;
+  opacity: .9;
+
+  .draft-spot {
+    padding: 10px;
+    margin: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: all 2s;
+    display: flex;
+    background-color: white;
+
+    &.Nordiques {
+      color: black;
+      background-color: lightskyblue;
+    }
+    &.Maroons {
+      color: white;
+      background-color: maroon;
+    }
+    &.North.Stars {
+      color: white;
+      background-color: green;
+    }
+    &.Americans {
+      color: white;
+      background-color: red;
+    }
+    &.Tigers {
+      color: Black;
+      background-color: gold;
+    }
+    &.Whalers {
+      color: white;
+      background-color: navy;
+    }
+    
+    &.Golden.Seals {
+      color: black;
+      background-color: teal;
+    }
+
+    .team-name {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+}
