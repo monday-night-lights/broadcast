@@ -20,7 +20,6 @@ export class LottoComponent implements OnInit {
 
   ngOnInit() {
     this.draftOrder = new Array();
-    this.draftOrder.push("Golden Seals");
 
     interval(1000)
       .pipe(
@@ -46,7 +45,6 @@ console.log(val);
     })
 
     this.draftOrder = winningBall.sort((a, b) => (a.time > b.time) ? 1 : -1).map((val) => val.team);
-    this.draftOrder.unshift('Golden Seals');
   }
 
   groupBy = function (xs, key) {
