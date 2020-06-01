@@ -15,6 +15,8 @@ import { AnnouncersComponent } from './announcers/announcers.component';
 import { CasterComponent } from './cast-game/caster/caster.component';
 import { CastGameService } from './services/castgame-service';
 import { NumberFlipDirective } from './directives/number-flip.directive';
+import { LottoComponent } from './lotto/lotto.component';
+import { LottoAdminComponent } from './lotto/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NumberFlipDirective } from './directives/number-flip.directive';
     KeeperComponent,
     AnnouncersComponent,
     CasterComponent,
-    NumberFlipDirective
+    NumberFlipDirective,
+    LottoComponent,
+    LottoAdminComponent
   ],
   imports: [
     BrowserModule,

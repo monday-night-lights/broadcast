@@ -1,0 +1,49 @@
+.draft-balls {
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  height: 100vh;
+  justify-content: space-evenly;
+
+  input {
+    padding: 10px;
+    margin: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: all 2s;
+    display: flex;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+
+    &.Nordiques {
+      color: black;
+      background-color: lightskyblue;
+    }
+    &.Maroons {
+      color: white;
+      background-color: maroon;
+    }
+    &.North.Stars {
+      color: white;
+      background-color: green;
+    }
+    &.Americans {
+      color: white;
+      background-color: red;
+    }
+    &.Tigers {
+      color: Black;
+      background-color: gold;
+    }
+    &.Whalers {
+      color: white;
+      background-color: navy;
+    }
+    
+    &.Golden.Seals {
+      color: black;
+      background-color: teal;
+    }
+  } 
+}

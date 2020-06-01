@@ -1,0 +1,6 @@
+<div class="draft-order">
+  <div *ngFor="let team of draftOrder; index as i" [className]="'draft-spot ' + team">
+    <span>#{{7-i}}</span> <span class="team-name">{{team}}</span>
+  </div>
+  <!-- <lotto-spot *ngFor="this.draftOrder" /> -->
+</div>

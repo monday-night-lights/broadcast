@@ -5,6 +5,8 @@ import { ScoreComponent } from './score/score.component';
 import { AnnouncersComponent } from './announcers/announcers.component';
 import { CasterComponent } from './cast-game/caster/caster.component';
 import { CastGameResolver } from './cast-game/caster/cast-game.resolver';
+import { LottoComponent } from './lotto/lotto.component';
+import { LottoAdminComponent } from './lotto/admin/admin.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,14 @@ const routes: Routes = [
     resolve: {
       results: CastGameResolver
     }
+  },
+  {
+    path: 'lotto',
+    component: LottoComponent
+  },
+  {
+    path: 'lotto/admin',
+    component: LottoAdminComponent
   }
 ];
 
