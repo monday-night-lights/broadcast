@@ -31,9 +31,7 @@ export class LottoComponent implements OnInit {
 
   determineOrder = (val) => {
     var winningBall= Array();
-
-console.log(val);
-
+    
     var group = this.groupBy(val, 'team');
 
     Object.keys(group).forEach((value, index, array) => {
