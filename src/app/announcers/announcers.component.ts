@@ -21,6 +21,7 @@ export class AnnouncersComponent implements OnInit {
   showPlay: boolean;
   showColor: boolean;
   showField: boolean;
+  colorLocation: number;
 
   constructor(@Inject(FileService) fileService: FileService, private route: ActivatedRoute) { 
     this.fileService = fileService;
@@ -34,6 +35,7 @@ export class AnnouncersComponent implements OnInit {
       this.showPlay = params.showPlay;
       this.showColor = params.showColor;
       this.showField = params.showField;
+      this.colorLocation = params.colorLocation;
     });
 
     interval(5000)
