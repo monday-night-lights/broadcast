@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: circleci/node:12.14.1-browsers
+      - image: circleci/node:12.22.1-browsers
     steps:
       - checkout
       - restore_cache:
@@ -18,7 +18,9 @@ jobs:
             - ./node_modules
       - run:
           name: Install AWS cli
-          command: sudo apt-get -y -qq install awscli
+          command: |
+            apt-get update
+            sudo apt-get -y -qq install awscli
       - run:
           name: angular-build
           command: yarn ng build --prod --aot --no-progress
@@ -30,7 +32,7 @@ jobs:
   deploy:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: circleci/node:12.14.1-browsers
+      - image: circleci/node:12.22.1-browsers
     steps:
       - checkout
       - restore_cache:
