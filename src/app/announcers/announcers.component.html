@@ -1,6 +1,6 @@
 <div class="announcers">
-    <announcer [announcer]="playByPlay"      [hideInsta]="false" [hidden]="!showPlay  || interviewing" style="order: 1" ></announcer>
-    <announcer [announcer]="colorCommentary" [hideInsta]="false" [hidden]="!showColor || interviewing" style.order="colorLocation"></announcer>
-    <announcer [announcer]="fieldReporter"   [hideInsta]="true"  [hidden]="!showField"></announcer>
+    <announcer [announcer]="playByPlay"      [hideInsta]="false" [hidden]="!showPlay  || interviewing" style="order: -1" ></announcer>
+    <announcer [announcer]="colorCommentary" [hideInsta]="false" [hidden]="!showColor || interviewing" [ngStyle]="{'order': colorLocation}"></announcer>
+    <announcer [announcer]="fieldReporter"   [hideInsta]="false" [hidden]="!showField"></announcer>
     <announcer [announcer]="player"          [hideInsta]="true"  [hidden]="!(interviewing)"></announcer>
 </div>

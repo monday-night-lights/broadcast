@@ -6,7 +6,7 @@ import { Announcer } from '../announcer/announcer';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-announcers',
+  selector: 'announcers',
   templateUrl: './announcers.component.html',
   styleUrls: ['./announcers.component.scss']
 })
@@ -56,10 +56,6 @@ export class AnnouncersComponent implements OnInit {
   }
 
   public get interviewing() : boolean {
-    console.log(this.player);
-    console.log(this.player.announcerName);
-    console.log(this.player.announcerName !== null);
-    console.log(this.player.announcerName.trim() !== null);
     return this.player.announcerName !== null && this.player.announcerName.trim() !== "";
   }
 }
