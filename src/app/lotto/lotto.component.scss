@@ -1,54 +1,106 @@
-.draft-order {
-  display: flex;
-  flex-direction: column-reverse;
-  max-width: 400px;
-  font-size: 36px;
+:host {
+  width: 100vw;
   height: 100vh;
-  justify-content: space-evenly;
-  opacity: .9;
+  display: flex;
 
-  .draft-spot {
-    padding: 10px;
-    margin: 5px 10px;
-    border-radius: 20px;
-    border: 1px solid black;
-    transition: all 2s;
+  .draft-order {
     display: flex;
-    background-color: white;
+    flex-direction: column-reverse;
+    min-width: 400px;
+    font-size: 36px;
+    height: 100vh;
+    justify-content: space-evenly;
+    opacity: 0.9;
 
-    &.Nordiques {
-      color: black;
-      background-color: lightskyblue;
-    }
-    &.Maroons {
-      color: white;
-      background-color: maroon;
-    }
-    &.North.Stars {
-      color: white;
-      background-color: green;
-    }
-    &.Americans {
-      color: white;
-      background-color: red;
-    }
-    &.Tigers {
-      color: Black;
-      background-color: gold;
-    }
-    &.Whalers {
-      color: white;
-      background-color: navy;
-    }
-    
-    &.Golden.Seals {
-      color: black;
-      background-color: teal;
-    }
+    .draft-spot {
+      padding: 10px;
+      margin: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid black;
+      transition: all 2s;
+      display: flex;
+      background-color: white;
 
-    .team-name {
-      flex-grow: 1;
-      text-align: center;
+      &.Nordiques {
+        color: black;
+        background-color: lightskyblue;
+      }
+      &.Maroons {
+        color: white;
+        background-color: maroon;
+      }
+      &.North.Stars {
+        color: white;
+        background-color: green;
+      }
+      &.Americans {
+        color: white;
+        background-color: red;
+      }
+      &.Tigers {
+        color: Black;
+        background-color: gold;
+      }
+      &.Whalers {
+        color: white;
+        background-color: navy;
+      }
+
+      &.Golden.Seals {
+        color: black;
+        background-color: teal;
+      }
+
+      .team-name {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+  }
+
+  .draft-balls {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+
+    .lotto-ball {
+      height: 100px;
+      width: 100px;
+      margin: 25px;
+      border-radius: 100px;
+      border: 3px black solid;
+
+      &.Nordiques {
+        color: black;
+        background-color: lightskyblue;
+      }
+      &.Maroons {
+        color: white;
+        background-color: maroon;
+      }
+      &.North.Stars {
+        color: white;
+        background-color: green;
+      }
+      &.Americans {
+        color: white;
+        background-color: red;
+      }
+      &.Tigers {
+        color: Black;
+        background-color: gold;
+      }
+      &.Whalers {
+        color: white;
+        background-color: navy;
+      }
+
+      &.Golden.Seals {
+        color: black;
+        background-color: teal;
+      }
     }
   }
 }

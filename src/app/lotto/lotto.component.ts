@@ -13,6 +13,7 @@ export class LottoComponent implements OnInit {
 
   lottoService: LottoService
   draftOrder: string[]
+  lottoOrder: any;
 
   constructor(@Inject(LottoService) lottoService: LottoService) {
     this.lottoService = lottoService;
@@ -30,6 +31,7 @@ export class LottoComponent implements OnInit {
   }
 
   determineOrder = (val) => {
+    this.lottoOrder = val.sort((a, b) => (a.time > b.time) ? 1 : -1).map((val) => val.team);
     var winningBall= Array();
     
     var group = this.groupBy(val, 'team');

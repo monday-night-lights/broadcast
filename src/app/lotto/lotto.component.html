@@ -4,3 +4,6 @@
   </div>
   <!-- <lotto-spot *ngFor="this.draftOrder" /> -->
 </div>
+<div class="draft-balls">
+  <div *ngFor="let ball of lottoOrder" [className]="'lotto-ball ' + ball"></div>
+</div>
