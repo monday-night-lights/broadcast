@@ -46,9 +46,9 @@ jobs:
       - run:
           name: Install AWS cli
           command: |
-            sudo apt-get update
-            sudo apt-get install awscli
+            sudo snap install aws-cli --classic
             aws --version
+            aws-cli/1.16.266 Python/3.5.2 Linux/5.0.0-37-generic botocore/1.13.2
       - run:
           name: angular-build
           command: yarn ng build --prod --aot --no-progress
