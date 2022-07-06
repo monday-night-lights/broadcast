@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: cimg/node:16.15.0
+      - image: wilson208/circleci-awscli
     steps:
       - checkout
       - restore_cache:
@@ -16,9 +16,9 @@ jobs:
           paths:
             - ~/.cache/yarn
             - ./node_modules
-      - run:
-          name: Install AWS cli
-          command: sudo apt-get -y -qq install awscli
+      # - run:
+      #     name: Install AWS cli
+      #     command: sudo apt-get -y -qq install awscli
       - run:
           name: angular-build
           command: yarn ng build --prod --aot --no-progress
