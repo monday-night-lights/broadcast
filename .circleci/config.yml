@@ -45,7 +45,10 @@ jobs:
             - ./node_modules
       - run:
           name: Install AWS cli
-          command: sudo apt-get -y -qq install awscli
+          command: |
+            sudo apt-get update
+            sudo apt-get install awscli
+            aws --version
       - run:
           name: angular-build
           command: yarn ng build --prod --aot --no-progress
