@@ -1,0 +1,17 @@
+<div class="buttons">
+  <input type="text" class="player-input" #player id="player" name="player" placeholder="Player Name"/>
+  <input type="button" (click)="popPick()" value="Remove Last Pick" />
+  <input type="button" (click)="emptyDraft()" value="Remove All Picks" />
+</div>
+
+<div class="teams">
+  <input type="button" (click)="pushPick('Maroons')" class="Maroons" value="Maroons" />
+  <input type="button" (click)="pushPick('Nordiques')" class="Nordiques" value="Nordiques" />
+  <input type="button" (click)="pushPick('Americans')" class="Americans" value="Americans" />
+  <input type="button" (click)="pushPick('Golden Seals')" class="Golden Seals" value="Golden Seals" />
+  <input type="button" (click)="pushPick('North Stars')" class="North Stars" value="North Stars" />
+  <input type="button" (click)="pushPick('Whalers')" class="Whalers" value="Whalers" />
+  <input type="button" (click)="pushPick('Tigers')" class="Tigers" value="Tigers" />
+</div>
+
+<draft></draft>

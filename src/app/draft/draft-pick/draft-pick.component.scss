@@ -1,0 +1,56 @@
+:host {
+  border: 1px solid black;
+  border-radius: 5px;
+  justify-self: stretch;
+
+  .draft-pick {
+    padding: 10px;
+
+    &.Maroons {
+      background-color: maroon;
+      color: white;
+    }
+
+    &.Nordiques {
+      background-color: skyblue;
+      color: crimson;
+    }
+
+    &.Americans {
+      background-color: white;
+    }
+
+    &.Seals {
+      background-color: teal;
+      color: white;
+    }
+
+    &.Stars {
+      background-color: green;
+      color: yellow;
+    }
+
+    &.Whalers {
+      background-color: lightgray;
+      color: green;
+    }
+
+    &.Tigers {
+      background-color: gold;
+    }
+  }
+
+  .top {
+    display: flex;
+
+    :first-child {
+      margin-right: 5px;
+      min-width: 27px;
+    }
+
+    :last-child {
+      font-weight: 800;
+      text-overflow: ellipsis;
+    }
+  }
+}
