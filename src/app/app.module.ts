@@ -17,6 +17,11 @@ import { CastGameService } from './services/castgame-service';
 import { NumberFlipDirective } from './directives/number-flip.directive';
 import { LottoComponent } from './lotto/lotto.component';
 import { LottoAdminComponent } from './lotto/admin/admin.component';
+import { DraftComponent } from './draft/draft.component';
+import { SummaryComponent } from './draft/summary/summary.component';
+import { DraftPickComponent } from './draft/draft-pick/draft-pick.component';
+import { DraftAdminComponent } from './draft/admin/admin.component';
+import { DraftTickerComponent } from './draft/ticker/ticker.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { LottoAdminComponent } from './lotto/admin/admin.component';
     CasterComponent,
     NumberFlipDirective,
     LottoComponent,
-    LottoAdminComponent
+    LottoAdminComponent,
+    DraftComponent,
+    DraftAdminComponent,
+    SummaryComponent,
+    DraftPickComponent,
+    DraftTickerComponent
   ],
   imports: [
     BrowserModule,

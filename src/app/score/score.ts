@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 import { Team } from '../team/team';
 import { Announcer } from '../announcer/announcer';
+import { DraftPick } from '../draft/draft-pick/draft-pick';
 
 export class Score {
     homeTeam: Team;
@@ -16,4 +17,5 @@ export class Score {
 
     castPoints: Array<number>;
     lottoBalls: Array<object>;
+    draftPicks: Array<DraftPick>;
 }
