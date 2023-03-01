@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http'
 import { CountdownModule } from 'ngx-countdown';
 import { AppRoutingModule } from './app-routing.module';
@@ -46,10 +45,9 @@ import { DraftTickerComponent } from './draft/ticker/ticker.component';
     FormsModule,
     AppRoutingModule,
     CountdownModule,
-    HttpClientModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [HttpModule, HttpClientModule, FileService, CastGameService],
+  providers: [HttpClientModule, FileService, CastGameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

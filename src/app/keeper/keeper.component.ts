@@ -16,8 +16,6 @@ export class KeeperComponent implements OnInit {
 
   private fileService: FileService;
 
-  @ViewChild('form', null) ngForm: NgForm;
-
   public homeTeam: Team;
   public awayTeam: Team;
 
