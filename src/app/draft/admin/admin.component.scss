@@ -1,0 +1,72 @@
+:host {
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    margin-top: 50px;
+
+    input {
+      height: 50px;
+      width: 300px;
+    }
+  }
+
+  .teams {
+    display: flex;
+    flex-direction: row;
+    font-size: 36px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    input {
+      padding: 10px;
+      margin: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid black;
+      transition: all 2s;
+      display: flex;
+      background-color: white;
+      text-align: center;
+      justify-content: center;
+
+      &.Maroons {
+        background-color: maroon;
+        color: white;
+      }
+
+      &.Nordiques {
+        background-color: skyblue;
+        color: crimson;
+      }
+
+      &.Americans {
+        background-color: white;
+      }
+
+      &.Seals {
+        background-color: teal;
+        color: white;
+      }
+
+      &.Stars {
+        background-color: green;
+        color: yellow;
+      }
+
+      &.Whalers {
+        background-color: lightgray;
+        color: green;
+      }
+
+      &.Tigers {
+        background-color: gold;
+      }
+    }
+  }
+}

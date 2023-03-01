@@ -7,6 +7,10 @@ import { CasterComponent } from './cast-game/caster/caster.component';
 import { CastGameResolver } from './cast-game/caster/cast-game.resolver';
 import { LottoComponent } from './lotto/lotto.component';
 import { LottoAdminComponent } from './lotto/admin/admin.component';
+import { DraftComponent } from './draft/draft.component';
+import { SummaryComponent } from './draft/summary/summary.component';
+import { DraftAdminComponent } from './draft/admin/admin.component';
+import { DraftTickerComponent } from './draft/ticker/ticker.component';
 
 
 const routes: Routes = [
@@ -36,6 +40,22 @@ const routes: Routes = [
   {
     path: 'lotto/admin',
     component: LottoAdminComponent
+  },
+  {
+    path: 'draft',
+    component: DraftComponent
+  },  
+  {
+    path: 'draft/admin',
+    component: DraftAdminComponent
+  },
+  {
+    path: 'draft/ticker',
+    component: DraftTickerComponent
+  },
+  {
+    path: 'draft/summary',
+    component: SummaryComponent
   }
 ];
 

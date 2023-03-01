@@ -1,0 +1,17 @@
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<div ng-app="tickerApp">
+  <div ng-controller="TICKER">
+    <div class="ticker">
+      <div class="sport-indicator">Draft</div>
+      <div class="info-container">
+        <div class="info" [ngStyle]="{'animation-duration.s': tickerSpeed}">
+          <div class="pick">Draft Results: </div>
+          <div class="pick" *ngFor="let pick of draftPicks; index as i">{{pick.pickNumber}}. {{pick.name}} - {{pick.team}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-container"></div>
+    <div class="logo"></div>
+  </div>
+</div>
