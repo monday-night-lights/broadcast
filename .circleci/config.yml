@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: wilson208/circleci-awscli
+      - image: cimg/node:14.15
     steps:
       - checkout
       - restore_cache:
@@ -30,7 +30,7 @@ jobs:
   deploy:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: wilson208/circleci-awscli
+      - image: cimg/node:14.15
     steps:
       - checkout
       - restore_cache:
