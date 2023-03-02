@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: wilson208/circleci-awscli
+      - image: cimg/node:14.15
     steps:
       - checkout
       - restore_cache:
@@ -21,7 +21,7 @@ jobs:
       #     command: sudo apt-get -y -qq install awscli
       - run:
           name: angular-build
-          command: yarn ng build --prod --aot --no-progress
+          command: yarn ng build --aot --no-progress
       - store_test_results:
           path: test-results.xml
       - store_artifacts:
@@ -30,7 +30,7 @@ jobs:
   deploy:
     working_directory: ~/angular-cli-circleci
     docker:
-      - image: wilson208/circleci-awscli
+      - image: cimg/node:14.15
     steps:
       - checkout
       - restore_cache:
@@ -51,7 +51,7 @@ jobs:
       #       aws-cli/1.16.266 Python/3.5.2 Linux/5.0.0-37-generic botocore/1.13.2
       - run:
           name: angular-build
-          command: yarn ng build --prod --aot --no-progress
+          command: yarn ng build --aot --no-progress
       - run:
           name: Setting Signature Version 4 for S3 Request Authentication
           command: aws configure set default.s3.signature_version s3v4
