@@ -1,28 +1,103 @@
 @import "../../styles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap');
 
 :host {
     width: 100vw;
     height: 100vh;
 
     .score-overlay {
-        width: 100%;
-        min-height: $overlayheight;
-        background-color: black;
+        width: 700px;
+        height: 128px;
+        border-radius: 2px;
+
+        margin-top: 40px;
+        margin-left: 40px;
 
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
 
-        & > *
-        {
-            flex: 1 1 0;
-            padding: 0 0 0 10px;
+        .logo-wrap {
+            background-color: black;
+            padding: 20px;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
 
-            &.homeTeam {
-                flex-direction: row-reverse;
-                padding: 0 10px 0 0;
+            .logo {
+                height: 90px;
+                width: 90px;
+                border-radius: 100px;
+                background-color: white;
+                text-align: center;
+                vertical-align: middle;
+                padding-top: 6px;
+                
+                span {
+                    color: black;
+                    font-size: 49px;
+                    font-weight: 700;
+                    position: relative;
+                    left: -2px;
+                    font-family: 'Figtree', "Titillium Web", "Open Sans", "Helvetica Neue", sans-serif;
+                    letter-spacing: -5px;
+                }
             }
         }
 
-        .game-info{
+        .scores {
+            flex-grow: 0.5;
+
+            display: flex;
+            flex-direction: column;
+
+            .score {
+                display: flex;
+                flex-direction: row;
+
+                .name-logo {
+                    color: white;
+                }
+
+                .goals {
+                    color: white;
+                    text-align: center;
+                }
+            }
+        }
+
+        .period-series {
+            height: 100%;
+            width: 120px;
+            background-color: black;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .period,
+            .series {
+                font-weight: 700;
+                color: #fff;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+            }
+
+            .period {
+                font-size: 35px;
+            }
+
+            .series {
+                font-size: 17px;
+            }
+        }
+
+        .game-info {
             color: white;
             text-align: center;
             font-size: 36px;
@@ -37,10 +112,6 @@
             .series-lead {
                 margin: 0;
             }
-
-            .period {
-                text-transform: initial;
-            }
         }
     }
 
@@ -50,7 +121,7 @@
         justify-content: space-around;
         margin: 10px;
 
-        announcer { 
+        announcer {
             margin: 10px;
         }
     }

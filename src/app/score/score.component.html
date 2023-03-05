@@ -1,10 +1,17 @@
 <div class="score-overlay">
-    <team [team]="awayTeam" [style.background-color]="awayTeam.color"></team>
-    <div  class="game-info">
-        <div class="period">Period {{period}} </div>
-        <img src="https://mnlhl.com/0fb5eaa2f4461cd1afbc.png" class="logo" />
-        <h4 class="series-lead">{{seriesLead}}</h4>
+    <div class="logo-wrap">
+        <div class="logo">
+            <span>MNL</span>
+        </div>
     </div>
-    <team [team]="homeTeam" [style.background-color]="homeTeam.color" class="homeTeam"></team>
+    <div class="scores">
+        <team [team]="awayTeam" class="away score" [style.background-color]="awayTeam.color"></team>
+        <team [team]="homeTeam" class="home score" [style.background-color]="homeTeam.color"></team>
+    </div>
+    <div class="period-series">
+        <div class="period">{{period}}</div>
+        <div class="series">{{seriesLead}}</div>
+    </div>
 </div>
+
 <announcers></announcers>

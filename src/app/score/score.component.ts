@@ -19,7 +19,7 @@ export class ScoreComponent implements OnInit {
   homeTeam: Team;
   awayTeam: Team;
 
-  period: number;
+  period: string;
   time: Time;
   gameStartTime: string;
 
@@ -43,20 +43,34 @@ export class ScoreComponent implements OnInit {
       //this.gameStartTime = val.gameStartTime;
       this.homeTeam = val.homeTeam;
       this.awayTeam = val.awayTeam;
-      this.period = val.period;
+
+      switch (val.period) {
+        case 1:
+          this.period = "1st";
+          break;
+        case 2:
+          this.period = "2nd";
+          break;
+        case 3:
+          this.period = "3rd";
+          break;
+        default:
+          this.period = "OT"
+          break;
+      }
     }
   }
 
   private _seriesLead: string;
   public get seriesLead(): string {
     if (this.homeTeam.gamesWon === this.awayTeam.gamesWon) {
-      this._seriesLead = `Series Tied ${ this.homeTeam.gamesWon }-${ this.awayTeam.gamesWon }`;
+      this._seriesLead = `Series Tied ${this.homeTeam.gamesWon}-${this.awayTeam.gamesWon}`;
     }
     else if (this.homeTeam.gamesWon > this.awayTeam.gamesWon) {
-      this._seriesLead = `${ this.homeTeam.teamName } Lead Series ${ this.homeTeam.gamesWon }-${ this.awayTeam.gamesWon }`;
+      this._seriesLead = `${this.homeTeam.teamName} Lead ${this.homeTeam.gamesWon}-${this.awayTeam.gamesWon}`;
     }
     else if (this.homeTeam.gamesWon < this.awayTeam.gamesWon) {
-      this._seriesLead = `${ this.awayTeam.teamName } Lead Series ${ this.awayTeam.gamesWon }-${ this.homeTeam.gamesWon }`;
+      this._seriesLead = `${this.awayTeam.teamName} Lead ${this.awayTeam.gamesWon}-${this.homeTeam.gamesWon}`;
     }
     else {
       this._seriesLead = "failure";
