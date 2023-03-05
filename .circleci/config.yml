@@ -73,10 +73,10 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - main
       - deploy:
           context: AWS
           filters:
             branches:
               only:
-                - master
+                - main
