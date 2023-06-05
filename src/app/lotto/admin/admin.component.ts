@@ -15,7 +15,7 @@ export class LottoAdminComponent implements OnInit {
   lottoService: LottoService
   private draftOrder: string[]
   private picksLeft: number = 6;
-  private teams = ["Nordiques", "Maroons", "North Stars", "Americans", "Tigers", "Whalers"];
+  private teams = ["Nordiques", "Scouts", "North Stars", "Americans", "Tigers", "Whalers"];
 
   constructor(@Inject(LottoService) lottoService: LottoService) {
     this.lottoService = lottoService;
