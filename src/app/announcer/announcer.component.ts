@@ -12,5 +12,6 @@ export class AnnouncerComponent implements OnInit {
   @Input() hideInsta: boolean;
 
   ngOnInit() {
+    this.hideInsta = this.hideInsta || !this.announcer.subtitle.startsWith("@");
   }
 }
