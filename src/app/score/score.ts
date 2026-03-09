@@ -7,6 +7,9 @@ export class Score {
     homeTeam: Team;
     awayTeam: Team;
 
+    homePlayersOnIce: Team;
+    awayPlayersOnIce: Team;
+
     period: number;
     timeLeft: Time;
 

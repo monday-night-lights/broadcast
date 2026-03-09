@@ -19,10 +19,16 @@ export class ScoreComponent implements OnInit {
   homeTeam: Team;
   awayTeam: Team;
 
+  homePlayersOnIce: number;
+  awayPlayersOnIce: number;
+
+  homePP: boolean;
+  awayPP: boolean;
+
   period: string;
   time: Time;
   gameStartTime: string;
-
+  numericalStrength: string;
 
   constructor(@Inject(FileService) fileService: FileService) {
     this.fileService = fileService;
@@ -44,6 +50,48 @@ export class ScoreComponent implements OnInit {
       this.homeTeam = val.homeTeam;
       this.awayTeam = val.awayTeam;
 
+      this.homePlayersOnIce = val.homePlayersOnIce ?? 5;
+      this.awayPlayersOnIce = val.awayPlayersOnIce ?? 5;
+
+      this.homePP = false;
+      this.awayPP = false;
+
+      if (this.homePlayersOnIce > this.awayPlayersOnIce) {
+        this.homePP = true;
+
+        if (this.homePlayersOnIce === 6 && this.awayPlayersOnIce === 5) {
+          this.numericalStrength = "EN";
+        }
+        else {
+          this.numericalStrength = `${this.homePlayersOnIce} on ${this.awayPlayersOnIce}`;
+        }
+      }
+      else if (this.homePlayersOnIce < this.awayPlayersOnIce) {
+        this.awayPP = true;
+
+        if (this.awayPlayersOnIce === 6 && this.homePlayersOnIce === 5) {
+          this.numericalStrength = "EN";
+        }
+        else {
+          this.numericalStrength = `${this.awayPlayersOnIce} on ${this.homePlayersOnIce}`;
+        }
+      }
+      else {
+        switch (this.homePlayersOnIce) {
+          case 4:
+            this.numericalStrength = "4 on 4";
+            this.homePP = true;
+            break;
+          case 3:
+            this.numericalStrength = "3 on 3";
+            this.homePP = true;
+            break
+          default:
+            this.numericalStrength = "Even Strength";
+            break;
+        }
+      }
+
       switch (val.period) {
         case 1:
           this.period = "1st";
@@ -55,7 +103,7 @@ export class ScoreComponent implements OnInit {
           this.period = "3rd";
           break;
         default:
-          this.period = "OT"
+          this.period = "OT";
           break;
       }
     }

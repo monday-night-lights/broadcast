@@ -38,7 +38,7 @@ export class AnnouncersComponent implements OnInit {
       this.colorLocation = params.colorLocation;
     });
 
-    interval(5000)
+    interval(1000)
       .pipe(
         startWith(0),
         switchMap(() => this.fileService.getScore())

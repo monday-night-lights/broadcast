@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import _jsonURL from '../../assets/data.json';
 import { Observable } from 'rxjs';
 import { Score } from '../score/score.js';
@@ -14,13 +14,20 @@ export class FileService {
     }
 
     public getScore(): Observable<Score> {
-        return this.httpClient.get<Score>(this.apiUrl);
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        });
+
+        return this.httpClient.get<Score>(this.apiUrl, { headers });
     }
 
     public saveScore(score: Score): Observable<Score> {
-        var response = this.httpClient.put<Score>(this.apiUrl, JSON.stringify(score)).pipe(x => {
-            return x;
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
         });
-        return response;
+
+        return this.httpClient.put<Score>(this.apiUrl, JSON.stringify(score), { headers });
     }
 }

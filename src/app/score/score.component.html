@@ -9,8 +9,10 @@
         <team [team]="homeTeam" class="home score" [style.background-color]="homeTeam.color"></team>
     </div>
     <div class="period-series">
+        <div class="pp away" [hidden]="!awayPP">{{numericalStrength}}</div>
         <div class="period">{{period}}</div>
-        <div class="series">{{seriesLead}}</div>
+        <div class="series" [hidden]="homePP || awayPP">{{seriesLead}}</div>
+        <div class="pp home" [hidden]="!homePP">{{numericalStrength}}</div>
     </div>
 </div>
 

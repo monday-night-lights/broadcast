@@ -1,5 +1,5 @@
 @import "../../styles.scss";
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap");
 
 :host {
     width: 100vw;
@@ -31,14 +31,14 @@
                 text-align: center;
                 vertical-align: middle;
                 padding-top: 6px;
-                
+
                 span {
                     color: black;
                     font-size: 49px;
                     font-weight: 700;
                     position: relative;
                     left: -2px;
-                    font-family: 'Figtree', "Titillium Web", "Open Sans", "Helvetica Neue", sans-serif;
+                    font-family: "Figtree", "Titillium Web", "Open Sans", "Helvetica Neue", sans-serif;
                     letter-spacing: -5px;
                 }
             }
@@ -70,7 +70,7 @@
             width: 120px;
             background-color: black;
             position: relative;
-            padding: 10px;
+            padding: 0px;
             text-align: center;
             border-top-right-radius: 7px;
             border-bottom-right-radius: 7px;
@@ -81,19 +81,39 @@
             align-items: center;
 
             .period,
-            .series {
+            .series,
+            .pp {
                 font-weight: 700;
                 color: #fff;
                 -webkit-text-stroke-width: 1px;
                 -webkit-text-stroke-color: black;
+                height: 50%;
+
+                &.away {
+                    border-top-right-radius: 6px;
+                }
+
+                &.home {
+                    border-bottom-right-radius: 7px;
+                }
             }
 
             .period {
+                padding: 7px;
                 font-size: 35px;
             }
 
             .series {
-                font-size: 17px;
+                font-size: 20px;
+            }
+
+            .pp {
+                width: 100%;
+                padding: 11px;
+
+                color: black;
+                background-color: yellow;
+                font-size: 25px;
             }
         }
 
