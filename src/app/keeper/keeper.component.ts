@@ -60,8 +60,8 @@ export class KeeperComponent implements OnInit {
     console.log(value);
     let score = new Score();
     score.period = value["period"];
-    score.homeTeam = new Team(value["homeTeam-name"], value["homeTeam-logo"], value["homeTeam-color"], value["homeTeam-gamesWon"], value["homeTeam-score"], true);
-    score.awayTeam = new Team(value["awayTeam-name"], value["awayTeam-logo"], value["awayTeam-color"], value["awayTeam-gamesWon"], value["awayTeam-score"], false);
+    score.homeTeam = new Team(value["homeTeam-name"], value["homeTeam-logo"], value["homeTeam-color"], value["homeTeam-gamesWon"], value["homeTeam-score"], true, value["homeTeam-playersOnIce"]);
+    score.awayTeam = new Team(value["awayTeam-name"], value["awayTeam-logo"], value["awayTeam-color"], value["awayTeam-gamesWon"], value["awayTeam-score"], false, value["awayTeam-playersOnIce"]);
     score.playByPlay = new Announcer(value["playByPlay-announcerName"], value["playByPlay-title"], value["playByPlay-subtitle"]);
     score.colorCommentary = new Announcer(value["colorCommentary-announcerName"], value["colorCommentary-title"], value["colorCommentary-subtitle"]);
     score.fieldReporter = new Announcer(value["fieldReporter-announcerName"], value["fieldReporter-title"], value["fieldReporter-subtitle"]);
