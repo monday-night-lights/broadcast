@@ -49,9 +49,7 @@ export class ScoreComponent implements OnInit {
       //this.gameStartTime = val.gameStartTime;
       this.homeTeam = val.homeTeam;
       this.awayTeam = val.awayTeam;
-
-      debugger;
-
+      
       this.homePlayersOnIce = val.homeTeam?.playersOnIce ?? 5;
       this.awayPlayersOnIce = val.awayTeam?.playersOnIce ?? 5;
 
