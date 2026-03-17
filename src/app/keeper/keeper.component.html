@@ -24,9 +24,10 @@
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-score">{{awayTeam.playersOnIce}} Players On Ice</label>
-                    <input type="number" class="form-control" name="awayTeam-playersOnIce" [(ngModel)]="awayTeam.playersOnIce" />
+                    <input type="number" class="form-control" name="awayTeam-playersOnIce"
+                           [(ngModel)]="awayTeam.playersOnIce" />
                 </div>
-                <hr/>
+                <hr />
                 <div class="form-group">
                     <label for="awayTeam-name">Away Team Name</label>
                     <input type="text" class="form-control" name="awayTeam-name" [(ngModel)]="awayTeam.teamName" />
@@ -43,7 +44,7 @@
                 <div class="form-group">
                     <label for="awayTeam-gamesWon">{{awayTeam.teamName}} Won</label>
                     <input type="number" class="form-control" name="awayTeam-gamesWon"
-                        [(ngModel)]="awayTeam.gamesWon" />
+                           [(ngModel)]="awayTeam.gamesWon" />
                 </div>
             </div>
             <hr />
@@ -55,9 +56,10 @@
                 </div>
                 <div class="form-group">
                     <label for="awayTeam-score">{{awayTeam.playersOnIce}} Players On Ice</label>
-                    <input type="number" class="form-control" name="homeTeam-playersOnIce" [(ngModel)]="homeTeam.playersOnIce" />
+                    <input type="number" class="form-control" name="homeTeam-playersOnIce"
+                           [(ngModel)]="homeTeam.playersOnIce" />
                 </div>
-                <hr/>
+                <hr />
                 <div class="form-group">
                     <label for="homeTeam-name">Home Team Name</label>
                     <input type="text" class="form-control" name="homeTeam-name" [(ngModel)]="homeTeam.teamName" />
@@ -74,7 +76,7 @@
                 <div class="form-group">
                     <label for="homeTeam-gamesWon">{{homeTeam.teamName}} Won</label>
                     <input type="number" class="form-control" name="homeTeam-gamesWon"
-                        [(ngModel)]="homeTeam.gamesWon" />
+                           [(ngModel)]="homeTeam.gamesWon" />
                 </div>
             </div>
         </div>
@@ -83,16 +85,21 @@
                 <div class="form-group">
                     <label for="playByPlayName">Play by Play Announcer Name</label>
                     <input type="text" class="form-control" name="playByPlay-announcerName"
-                        [(ngModel)]="playByPlay.announcerName" />
+                           [(ngModel)]="playByPlay.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="playByPlayTitle">Play by Play Title</label>
                     <input type="text" class="form-control" name="playByPlay-title" [(ngModel)]="playByPlay.title" />
                 </div>
                 <div class="form-group">
-                    <label for="playByPlaySubtitle">Play by Play Subtitle</label>
+                    <label for="playByPlaySubtitle">Play by Play Role</label>
                     <input type="text" class="form-control" name="playByPlay-subtitle"
-                        [(ngModel)]="playByPlay.subtitle" />
+                           [(ngModel)]="playByPlay.subtitle" />
+                </div>
+                <div class="form-group">
+                    <label for="playByPlaySubtitle">Play by Play Order</label>
+                    <input type="number" class="form-control" name="playByPlay-order"
+                           [(ngModel)]="playByPlay.order" />
                 </div>
                 <hr />
             </div>
@@ -100,17 +107,22 @@
                 <div class="form-group">
                     <label for="colorCommentaryName">Color Commentary Name</label>
                     <input type="text" class="form-control" name="colorCommentary-announcerName"
-                        [(ngModel)]="colorCommentary.announcerName" />
+                           [(ngModel)]="colorCommentary.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="colorCommentaryTitle">Color Commentary Title</label>
                     <input type="text" class="form-control" name="colorCommentary-title"
-                        [(ngModel)]="colorCommentary.title" />
+                           [(ngModel)]="colorCommentary.title" />
                 </div>
                 <div class="form-group">
-                    <label for="colorCommentarySubtitle">Color Commentary Subtitle</label>
+                    <label for="colorCommentarySubtitle">Color Commentary Role</label>
                     <input type="text" class="form-control" name="colorCommentary-subtitle"
-                        [(ngModel)]="colorCommentary.subtitle" />
+                           [(ngModel)]="colorCommentary.subtitle" />
+                </div>
+                <div class="form-group">
+                    <label for="colorCommentarySubtitle">Color Commentary Order</label>
+                    <input type="number" class="form-control" name="colorCommentary-order"
+                           [(ngModel)]="colorCommentary.order" />
                 </div>
                 <hr />
             </div>
@@ -118,17 +130,22 @@
                 <div class="form-group">
                     <label for="fieldReporterName">Field Reporter Name</label>
                     <input type="text" class="form-control" name="fieldReporter-announcerName"
-                        [(ngModel)]="fieldReporter.announcerName" />
+                           [(ngModel)]="fieldReporter.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="fieldReporterTitle">Field Reporter Title</label>
                     <input type="text" class="form-control" name="fieldReporter-title"
-                        [(ngModel)]="fieldReporter.title" />
+                           [(ngModel)]="fieldReporter.title" />
                 </div>
                 <div class="form-group">
-                    <label for="fieldReporterSubtitle">Field Reporter Subtitle</label>
+                    <label for="fieldReporterSubtitle">Field Reporter Role</label>
                     <input type="text" class="form-control" name="fieldReporter-subtitle"
-                        [(ngModel)]="fieldReporter.subtitle" />
+                           [(ngModel)]="fieldReporter.subtitle" />
+                </div>
+                <div class="form-group">
+                    <label for="fieldReporterSubtitle">Field Reporter Order</label>
+                    <input type="number" class="form-control" name="fieldReporter-order"
+                           [(ngModel)]="fieldReporter.order" />
                 </div>
                 <hr />
             </div>
@@ -136,15 +153,19 @@
                 <div class="form-group">
                     <label for="playerName">Interviewed Player Name</label>
                     <input type="text" class="form-control" name="player-announcerName"
-                        [(ngModel)]="player.announcerName" />
+                           [(ngModel)]="player.announcerName" />
                 </div>
                 <div class="form-group">
                     <label for="playerTitle">Interviewed Player Title</label>
                     <input type="text" class="form-control" name="player-title" [(ngModel)]="player.title" />
                 </div>
                 <div class="form-group">
-                    <label for="playerSubtitle">Interviewed Player Subtitle</label>
+                    <label for="playerSubtitle">Interviewed Player Role</label>
                     <input type="text" class="form-control" name="player-subtitle" [(ngModel)]="player.subtitle" />
+                </div>
+                <div class="form-group">
+                    <label for="playerSubtitle">Interviewed Player Order</label>
+                    <input type="number" class="form-control" name="player-order" [(ngModel)]="player.order" />
                 </div>
                 <hr style="margin-bottom: 100px" />
             </div>

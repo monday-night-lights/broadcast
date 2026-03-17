@@ -52,6 +52,18 @@ export class AnnouncersComponent implements OnInit {
       this.colorCommentary = val.colorCommentary;
       this.fieldReporter = val.fieldReporter;
       this.player = val.player;
+
+      if(this.playByPlay == null) {
+        this.showPlay = false;
+      }
+
+      if(this.colorCommentary == null) {
+        this.showColor = false;
+      }
+
+      if(this.fieldReporter == null) {
+        this.showField = false;
+      }
     }
   }
 

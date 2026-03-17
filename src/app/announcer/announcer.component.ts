@@ -9,9 +9,7 @@ import { Announcer } from './announcer';
 export class AnnouncerComponent implements OnInit {
  
   @Input() announcer: Announcer;
-  @Input() hideInsta: boolean;
 
   ngOnInit() {
-    this.hideInsta = this.hideInsta || !this.announcer.subtitle.startsWith("@");
   }
 }
